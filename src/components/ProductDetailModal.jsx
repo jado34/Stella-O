@@ -221,7 +221,28 @@ export default function ProductDetailModal() {
         .pdp-close:hover { background: #E2DBD0; }
 
         .pdp-inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: 0; }
-        @media (max-width: 768px) { .pdp-inner { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) {
+          .pdp-inner { grid-template-columns: 1fr; }
+          .pdp-images { padding: 16px; }
+          .pdp-main-img { height: 240px; margin-bottom: 8px; }
+          .pdp-thumbs { justify-content: center; }
+          .pdp-info { padding: 18px 16px 24px 16px; }
+          .pdp-title { font-size: 22px; }
+        }
+        @media (max-width: 500px) {
+          .pdp-cta-row {
+            display: grid !important;
+            grid-template-columns: auto 1fr !important;
+            gap: 12px !important;
+            margin-bottom: 16px !important;
+          }
+          .pdp-add-btn {
+            grid-column: span 2 !important;
+            width: 100% !important;
+            justify-content: center !important;
+            height: 44px !important;
+          }
+        }
 
         .pdp-images { padding: 28px 20px 28px 28px; background: var(--cream-bg); }
         .pdp-main-img { position: relative; height: 340px; border-radius: 6px; overflow: hidden; margin-bottom: 12px; background: var(--card-bg); }

@@ -210,6 +210,7 @@ export default function Navbar() {
 
             <div className="mobile-views-list">
               <button className={`mobile-view-link ${activeView === 'home' ? 'active' : ''}`} onClick={() => handleViewSelect('home')}>HOME</button>
+              <button className={`mobile-view-link ${activeView === 'shop' ? 'active' : ''}`} onClick={() => handleViewSelect('shop')}>SHOP</button>
               <button className={`mobile-view-link ${activeView === 'story' ? 'active' : ''}`} onClick={() => handleViewSelect('story')}>OUR STORY</button>
               <button className={`mobile-view-link ${activeView === 'faq' ? 'active' : ''}`} onClick={() => handleViewSelect('faq')}>FAQ</button>
               <button className={`mobile-view-link ${activeView === 'contact' ? 'active' : ''}`} onClick={() => handleViewSelect('contact')}>CONTACT</button>
