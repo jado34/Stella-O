@@ -130,7 +130,21 @@ export default function Navbar() {
                 )}
               </div>
             ) : (
-              <button className="nav-icon-btn" onClick={() => setShowSearch(true)} title="Search">
+              <button
+                className="nav-icon-btn"
+                onClick={() => {
+                  if (window.innerWidth < 960) {
+                    setMobileOpen(true);
+                    setTimeout(() => {
+                      const input = document.querySelector('.mobile-search input');
+                      if (input) input.focus();
+                    }, 200);
+                  } else {
+                    setShowSearch(true);
+                  }
+                }}
+                title="Search"
+              >
                 <Search size={16} />
               </button>
             )}
@@ -341,6 +355,7 @@ export default function Navbar() {
           .nav-mobile-toggle { display: flex; }
           .nav-currency-wrap { display: none; }
           .nav-account-btn { display: none; }
+          .nav-search-box { display: none !important; }
         }
 
         /* Floating WhatsApp Concierge Widget matching zttw screenshot */
