@@ -197,6 +197,61 @@ export default function ProductCard({ product, index = 0 }) {
         .pc-add-btn:hover:not(.disabled) { background: var(--gold); box-shadow: 0 6px 18px rgba(214, 90, 49, 0.3); }
         .pc-add-btn.added { background: #10b981; }
         .pc-add-btn.disabled { background: #F0EDE8; color: var(--text-muted); cursor: not-allowed; box-shadow: none; }
+
+        @media (max-width: 600px) {
+          .pc-body {
+            padding: 10px 10px 12px;
+          }
+          .pc-category {
+            font-size: 8px !important;
+            margin-bottom: 2px;
+          }
+          .pc-name {
+            font-size: 14px !important;
+            line-height: 1.2;
+            margin-bottom: 2px;
+          }
+          .pc-origin {
+            font-size: 9px !important;
+            margin-bottom: 8px;
+          }
+          .pc-variants {
+            margin-bottom: 8px;
+            gap: 4px;
+          }
+          .pc-variant-btn {
+            padding: 2px 6px;
+            font-size: 9px;
+          }
+          .pc-footer {
+            padding-top: 8px;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 6px;
+          }
+          .pc-price {
+            justify-content: space-between;
+          }
+          .pc-price-main {
+            font-size: 15px !important;
+          }
+          .pc-price-sub {
+            font-size: 9px !important;
+          }
+          .pc-add-btn {
+            width: 100%;
+            padding: 6px 10px;
+            font-size: 9px;
+            height: 30px;
+            min-width: unset;
+          }
+          .pc-badge {
+            top: 6px;
+            left: 6px;
+            font-size: 8px;
+            padding: 3px 8px;
+          }
+        }
       `}</style>
     </div>
   );
