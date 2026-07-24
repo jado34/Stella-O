@@ -210,24 +210,10 @@ export default function Navbar() {
 
             <div className="mobile-views-list">
               <button className={`mobile-view-link ${activeView === 'home' ? 'active' : ''}`} onClick={() => handleViewSelect('home')}>HOME</button>
-              <button className={`mobile-view-link ${activeView === 'shop' ? 'active' : ''}`} onClick={() => handleViewSelect('shop')}>SHOP PRODUCTS</button>
               <button className={`mobile-view-link ${activeView === 'story' ? 'active' : ''}`} onClick={() => handleViewSelect('story')}>OUR STORY</button>
               <button className={`mobile-view-link ${activeView === 'faq' ? 'active' : ''}`} onClick={() => handleViewSelect('faq')}>FAQ</button>
               <button className={`mobile-view-link ${activeView === 'contact' ? 'active' : ''}`} onClick={() => handleViewSelect('contact')}>CONTACT</button>
               <button className="mobile-view-link" onClick={() => { setMobileOpen(false); setIsAccountOpen(true); }}>MY ACCOUNT</button>
-            </div>
-
-            <div className="mobile-cats">
-              <p className="mobile-section-title">CATEGORIES</p>
-              {categories.map(c => (
-                <button
-                  key={c.id}
-                  className={`mobile-cat-link ${activeCategory === c.id ? 'active' : ''}`}
-                  onClick={() => handleCategorySelect(c.id)}
-                >
-                  {c.label}
-                </button>
-              ))}
             </div>
 
             <div className="mobile-currency-section">
