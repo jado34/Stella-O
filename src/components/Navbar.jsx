@@ -136,7 +136,7 @@ export default function Navbar() {
             )}
 
             {/* Account */}
-            <button className="nav-icon-btn" onClick={() => setIsAccountOpen(true)} title="Account">
+            <button className="nav-icon-btn nav-account-btn" onClick={() => setIsAccountOpen(true)} title="Account">
               <User size={16} />
             </button>
 
@@ -200,6 +200,7 @@ export default function Navbar() {
               <button className={`mobile-view-link ${activeView === 'story' ? 'active' : ''}`} onClick={() => handleViewSelect('story')}>OUR STORY</button>
               <button className={`mobile-view-link ${activeView === 'faq' ? 'active' : ''}`} onClick={() => handleViewSelect('faq')}>FAQ</button>
               <button className={`mobile-view-link ${activeView === 'contact' ? 'active' : ''}`} onClick={() => handleViewSelect('contact')}>CONTACT</button>
+              <button className="mobile-view-link" onClick={() => { setMobileOpen(false); setIsAccountOpen(true); }}>MY ACCOUNT</button>
             </div>
 
             <div className="mobile-cats">
@@ -268,9 +269,19 @@ export default function Navbar() {
         }
         .nav-logo-title {
           font-size: 26px; font-weight: 400; color: var(--charcoal-text); letter-spacing: 0.12em;
+          transition: var(--transition);
         }
         .nav-logo-sub {
           font-size: 8px; letter-spacing: 0.35em; color: var(--gold); font-weight: 700; margin-top: 2px;
+          transition: var(--transition);
+        }
+        @media (max-width: 768px) {
+          .nav-logo-title { font-size: 18px; letter-spacing: 0.08em; }
+          .nav-logo-sub { font-size: 6px; letter-spacing: 0.25em; }
+        }
+        @media (max-width: 480px) {
+          .nav-logo-title { font-size: 15px; letter-spacing: 0.06em; }
+          .nav-logo-sub { font-size: 5px; letter-spacing: 0.2em; }
         }
 
         .nav-right { display: flex; align-items: center; gap: 14px; }
@@ -326,7 +337,11 @@ export default function Navbar() {
         .nav-mobile-toggle {
           display: none; background: none; border: none; cursor: pointer; color: var(--charcoal-text);
         }
-        @media (max-width: 960px) { .nav-mobile-toggle { display: flex; } }
+        @media (max-width: 960px) {
+          .nav-mobile-toggle { display: flex; }
+          .nav-currency-wrap { display: none; }
+          .nav-account-btn { display: none; }
+        }
 
         /* Floating WhatsApp Concierge Widget matching zttw screenshot */
         .floating-whatsapp-widget {
