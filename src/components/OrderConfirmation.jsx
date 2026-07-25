@@ -4,7 +4,7 @@ import { useShop } from '../context/ShopContext';
 import WhatsAppIcon from './WhatsAppIcon';
 
 export default function OrderConfirmation() {
-  const { orderConfirmed, setOrderConfirmed, convertPrice, setActiveView, addToCart } = useShop();
+  const { orderConfirmed, setOrderConfirmed, convertPrice, setActiveView, addToCart, WHATSAPP_BUSINESS_NUMBER, PAYPAL_ME_LINK, PAYPAL_EMAIL } = useShop();
 
   if (!orderConfirmed) return null;
 
@@ -17,33 +17,60 @@ export default function OrderConfirmation() {
       itemsList += `- ${item.product.name} (${item.variant.label}) x ${item.quantity} (${priceStr})\n`;
     });
 
-    let message = `🇳🇬 *STELLA O AFRO SHOP - NEW ORDER*\n` +
-      `${lineBreak}\n` +
-      `*Order Reference:* ${orderConfirmed.id}\n` +
-      `*Customer Name:* ${orderConfirmed.customerName}\n` +
-      `*Phone:* ${orderConfirmed.phone}\n` +
-      `*Email:* ${orderConfirmed.email}\n\n` +
-      `*Delivery Address:*\n` +
-      `${orderConfirmed.address}\n\n` +
-      `*Shipping Zone:* ${orderConfirmed.zone?.name || 'Lagos Island'}\n` +
-      `*Delivery Slot:* ${orderConfirmed.slot?.date} (${orderConfirmed.slot?.time})\n\n` +
-      `*Items Ordered:*\n` +
-      `${itemsList}\n`;
+    let message = '';
+    if (orderConfirmed.paymentGateway === 'paypal_whatsapp') {
+      message = `🇳🇬 *AFRIFOOD BASKET - NEW ORDER (PAYPAL)*\n` +
+        `${lineBreak}\n` +
+        `*Order Reference:* ${orderConfirmed.id}\n` +
+        `*Customer Name:* ${orderConfirmed.customerName}\n` +
+        `*Phone:* ${orderConfirmed.phone}\n` +
+        `*Email:* ${orderConfirmed.email}\n\n` +
+        `*Delivery Address:*\n` +
+        `${orderConfirmed.address}\n\n` +
+        `*Shipping Zone:* ${orderConfirmed.zone?.name || 'Lagos Island'}\n` +
+        `*Delivery Slot:* ${orderConfirmed.slot?.date} (${orderConfirmed.slot?.time})\n\n` +
+        `*Items Ordered:*\n` +
+        `${itemsList}\n` +
+        `${lineBreak}\n` +
+        `*Order Calculations:*\n` +
+        `- Subtotal: ${convertPrice(orderConfirmed.subtotal || (orderConfirmed.total - orderConfirmed.deliveryFee))}\n` +
+        `- Delivery Fee: ${convertPrice(orderConfirmed.deliveryFee)}\n` +
+        `- *Total Amount Payable:* ${convertPrice(orderConfirmed.total)}\n\n` +
+        `${lineBreak}\n` +
+        `*PayPal Payment Details:*\n` +
+        `Paid via PayPal to ${PAYPAL_ME_LINK}\n` +
+        `[📎 ATTACH YOUR PAYMENT SCREENSHOT HERE]\n\n` +
+        `Thank you!`;
+    } else {
+      message = `🇳🇬 *AFRIFOOD BASKET - NEW ORDER*\n` +
+        `${lineBreak}\n` +
+        `*Order Reference:* ${orderConfirmed.id}\n` +
+        `*Customer Name:* ${orderConfirmed.customerName}\n` +
+        `*Phone:* ${orderConfirmed.phone}\n` +
+        `*Email:* ${orderConfirmed.email}\n\n` +
+        `*Delivery Address:*\n` +
+        `${orderConfirmed.address}\n\n` +
+        `*Shipping Zone:* ${orderConfirmed.zone?.name || 'Lagos Island'}\n` +
+        `*Delivery Slot:* ${orderConfirmed.slot?.date} (${orderConfirmed.slot?.time})\n\n` +
+        `*Items Ordered:*\n` +
+        `${itemsList}\n`;
 
-    if (orderConfirmed.isGift) {
-      message += `*Gifting Order:* Yes (Complimentary Ribbon Packing)\n` +
-        `*Gift Note:* "${orderConfirmed.giftNote || 'With warmth'}"\n\n`;
+      if (orderConfirmed.isGift) {
+        message += `*Gifting Order:* Yes (Complimentary Ribbon Packing)\n` +
+          `*Gift Note:* "${orderConfirmed.giftNote || 'With warmth'}"\n\n`;
+      }
+
+      message += `${lineBreak}\n` +
+        `*Order Calculations:*\n` +
+        `- Subtotal: ${convertPrice(orderConfirmed.subtotal || (orderConfirmed.total - orderConfirmed.deliveryFee))}\n` +
+        `- Delivery Fee: ${convertPrice(orderConfirmed.deliveryFee)}\n` +
+        `- *Total Amount Payable:* ${convertPrice(orderConfirmed.total)}\n\n` +
+        `${lineBreak}\n` +
+        `Please send the bank account details so I can make the direct transfer. Thank you!`;
     }
 
-    message += `${lineBreak}\n` +
-      `*Order Calculations:*\n` +
-      `- Subtotal: ${convertPrice(orderConfirmed.subtotal || (orderConfirmed.total - orderConfirmed.deliveryFee))}\n` +
-      `- Delivery Fee: ${convertPrice(orderConfirmed.deliveryFee)}\n` +
-      `- *Total Amount Payable:* ${convertPrice(orderConfirmed.total)}\n\n` +
-      `${lineBreak}\n` +
-      `Please send the bank account details so I can make the direct transfer. Thank you!`;
-
-    return `https://wa.me/234800746759?text=${encodeURIComponent(message)}`;
+    const cleanPhone = WHATSAPP_BUSINESS_NUMBER.replace(/[^0-9]/g, '');
+    return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
   };
 
   const handlePrint = () => {
@@ -78,14 +105,14 @@ export default function OrderConfirmation() {
         </div>
 
         <h2 className="serif oc-title">Order Confirmed!</h2>
-        <p className="oc-sub">Thank you for ordering with Stella O Afro Shop.</p>
+        <p className="oc-sub">Thank you for ordering with AfriFood Basket.</p>
         <p className="oc-id">Order Reference: <strong style={{ color: 'var(--gold)' }}>{orderConfirmed.id}</strong></p>
 
         {/* Live Tracking Timeline */}
         <div className="oc-timeline">
           {[
             { icon: CheckCircle, label: 'Order Placed', sub: orderConfirmed.placedAt, done: true },
-            { icon: Package, label: 'Shop Packing', sub: 'Stella is packing your box', done: true },
+            { icon: Package, label: 'Shop Packing', sub: 'AfriFood Basket is packing your box', done: true },
             { icon: Truck, label: 'Delivery Dispatch', sub: orderConfirmed.slot?.time || 'Scheduled Slot', done: false },
             { icon: Clock, label: 'Delivered', sub: 'Handed to recipient', done: false },
           ].map((step, i) => (
@@ -133,12 +160,12 @@ export default function OrderConfirmation() {
         </div>
 
         <p className="oc-note">
-          Instant updates sent via SMS & WhatsApp. Need immediate help? Contact Stella's dispatch desk at <strong style={{ color: 'var(--gold)' }}>+234 800 746 759</strong>
+          Instant updates sent via SMS & WhatsApp. Need immediate help? Contact Stella's dispatch desk at <strong style={{ color: 'var(--gold)' }}>{WHATSAPP_BUSINESS_NUMBER}</strong>
         </p>
 
         {/* Action Buttons */}
         <div className="oc-actions">
-          {orderConfirmed.paymentGateway === 'bank' && (
+          {(orderConfirmed.paymentGateway === 'bank' || orderConfirmed.paymentGateway === 'paypal_whatsapp') && (
             <a
               href={getWhatsAppLink()}
               target="_blank"
@@ -170,7 +197,7 @@ export default function OrderConfirmation() {
             <Printer size={14} /> Print Receipt
           </button>
           <a
-            href="https://wa.me/234800746759"
+            href={`https://wa.me/${WHATSAPP_BUSINESS_NUMBER.replace(/[^0-9]/g, '')}`}
             target="_blank"
             rel="noreferrer"
             className="btn-outline"

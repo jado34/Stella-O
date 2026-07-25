@@ -199,7 +199,7 @@ export default function ShopSection() {
           </p>
         )}
         <h1 className="shop-title-large serif" style={{ fontSize: isHome ? 'clamp(28px, 4vw, 42px)' : undefined }}>
-          {isHome ? "STELLA'S FEATURED SELECTION" : 'PRODUCTS'}
+          {isHome ? "AFRIFOOD FEATURED SELECTION" : 'PRODUCTS'}
         </h1>
       </div>
 

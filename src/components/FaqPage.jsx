@@ -17,7 +17,7 @@ const FAQ_CATEGORIES = [
       },
       {
         q: 'What are the delivery slots for Lagos and Abuja?',
-        a: 'Stella’s delivery drivers run three daily dispatch windows: Morning Run (8am - 11am), Afternoon Dispatch (11am - 2pm), and Evening Deliveries (2pm - 5pm). You can schedule your slot up to 7 days in advance.',
+        a: 'Our delivery drivers run three daily dispatch windows: Morning Run (8am - 11am), Afternoon Dispatch (11am - 2pm), and Evening Deliveries (2pm - 5pm). You can schedule your slot up to 7 days in advance.',
       },
     ],
   },

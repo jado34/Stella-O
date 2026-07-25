@@ -1,6 +1,10 @@
 import React, { createContext, useContext, useState, useCallback } from 'react';
 import { exchangeRates, currencySymbols, generateDeliverySlots, products as initialProducts, deliveryZones, initialPromoCodes } from '../data/products';
 
+export const WHATSAPP_BUSINESS_NUMBER = '+4915731234567';
+export const PAYPAL_ME_LINK = 'https://paypal.me/afrifoodbasket';
+export const PAYPAL_EMAIL = 'payment@afrifoodbasket.com';
+
 const ShopContext = createContext(null);
 
 export function ShopProvider({ children }) {
@@ -181,7 +185,7 @@ export function ShopProvider({ children }) {
       isGift: isGifting,
       giftNote: giftingNote,
       status: 'Order Placed & Kitchen Notified',
-      paymentGateway: paymentMethod, // 'card', 'bank', or 'ussd'
+      paymentGateway: paymentMethod, // 'card', 'bank', 'paypal_whatsapp', or 'ussd'
       placedAt: new Date().toLocaleString('en-NG'),
     };
 
@@ -192,8 +196,8 @@ export function ShopProvider({ children }) {
     setIsCheckoutOpen(false);
     showToast(`Order #${orderId} confirmed!`);
 
-    // Redirection to WhatsApp for bank transfers
-    if (paymentMethod === 'bank') {
+    // Redirection to WhatsApp for bank transfers or PayPal transfers
+    if (paymentMethod === 'bank' || paymentMethod === 'paypal_whatsapp') {
       const lineBreak = '---------------------------------------';
       let itemsList = '';
       cartItems.forEach(item => {
@@ -201,33 +205,66 @@ export function ShopProvider({ children }) {
         itemsList += `- ${item.product.name} (${item.variant.label}) x ${item.quantity} (${priceStr})\n`;
       });
 
-      let message = `🇳🇬 *STELLA O AFRO SHOP - NEW ORDER*\n` +
-        `${lineBreak}\n` +
-        `*Order Reference:* ${orderId}\n` +
-        `*Customer Name:* ${newOrder.customerName}\n` +
-        `*Phone:* ${newOrder.phone}\n` +
-        `*Email:* ${newOrder.email}\n\n` +
-        `*Delivery Address:*\n` +
-        `${newOrder.address}\n\n` +
-        `*Shipping Zone:* ${selectedZone?.name || 'Lagos Island'}\n` +
-        `*Delivery Slot:* ${selectedSlot?.date} (${selectedSlot?.time})\n\n` +
-        `*Items Ordered:*\n` +
-        `${itemsList}\n`;
+      let message = '';
+      if (paymentMethod === 'paypal_whatsapp') {
+        message = `🇳🇬 *AFRIFOOD BASKET - NEW ORDER (PAYPAL)*\n` +
+          `${lineBreak}\n` +
+          `*Order Reference:* ${orderId}\n` +
+          `*Customer Name:* ${newOrder.customerName}\n` +
+          `*Phone:* ${newOrder.phone}\n` +
+          `*Email:* ${newOrder.email}\n\n` +
+          `*Delivery Address:*\n` +
+          `${newOrder.address}\n\n` +
+          `*Shipping Zone:* ${selectedZone?.name || 'Lagos Island'}\n` +
+          `*Delivery Slot:* ${selectedSlot?.date} (${selectedSlot?.time})\n\n` +
+          `*Items Ordered:*\n` +
+          `${itemsList}\n`;
 
-      if (isGifting) {
-        message += `*Gifting Order:* Yes (Complimentary Ribbon Packing)\n` +
-          `*Gift Note:* "${giftingNote || 'With warmth'}"\n\n`;
+        if (isGifting) {
+          message += `*Gifting Order:* Yes (Complimentary Ribbon Packing)\n` +
+            `*Gift Note:* "${giftingNote || 'With warmth'}"\n\n`;
+        }
+
+        message += `${lineBreak}\n` +
+          `*Order Calculations:*\n` +
+          `- Subtotal: ${convertPrice(cartSubtotal)}\n` +
+          `- Delivery Fee: ${convertPrice(deliveryFee)}\n` +
+          `- *Total Amount Payable:* ${convertPrice(cartTotal)}\n\n` +
+          `${lineBreak}\n` +
+          `*PayPal Payment Details:*\n` +
+          `Paid via PayPal to ${PAYPAL_ME_LINK}\n` +
+          `[📎 ATTACH YOUR PAYMENT SCREENSHOT HERE]\n\n` +
+          `Thank you!`;
+      } else {
+        message = `🇳🇬 *AFRIFOOD BASKET - NEW ORDER*\n` +
+          `${lineBreak}\n` +
+          `*Order Reference:* ${orderId}\n` +
+          `*Customer Name:* ${newOrder.customerName}\n` +
+          `*Phone:* ${newOrder.phone}\n` +
+          `*Email:* ${newOrder.email}\n\n` +
+          `*Delivery Address:*\n` +
+          `${newOrder.address}\n\n` +
+          `*Shipping Zone:* ${selectedZone?.name || 'Lagos Island'}\n` +
+          `*Delivery Slot:* ${selectedSlot?.date} (${selectedSlot?.time})\n\n` +
+          `*Items Ordered:*\n` +
+          `${itemsList}\n`;
+
+        if (isGifting) {
+          message += `*Gifting Order:* Yes (Complimentary Ribbon Packing)\n` +
+            `*Gift Note:* "${giftingNote || 'With warmth'}"\n\n`;
+        }
+
+        message += `${lineBreak}\n` +
+          `*Order Calculations:*\n` +
+          `- Subtotal: ${convertPrice(cartSubtotal)}\n` +
+          `- Delivery Fee: ${convertPrice(deliveryFee)}\n` +
+          `- *Total Amount Payable:* ${convertPrice(cartTotal)}\n\n` +
+          `${lineBreak}\n` +
+          `Please send the bank account details so I can make the direct transfer. Thank you!`;
       }
 
-      message += `${lineBreak}\n` +
-        `*Order Calculations:*\n` +
-        `- Subtotal: ${convertPrice(cartSubtotal)}\n` +
-        `- Delivery Fee: ${convertPrice(deliveryFee)}\n` +
-        `- *Total Amount Payable:* ${convertPrice(cartTotal)}\n\n` +
-        `${lineBreak}\n` +
-        `Please send the bank account details so I can make the direct transfer. Thank you!`;
-
-      const whatsAppLink = `https://wa.me/234800746759?text=${encodeURIComponent(message)}`;
+      const cleanPhone = WHATSAPP_BUSINESS_NUMBER.replace(/[^0-9]/g, '');
+      const whatsAppLink = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
       
       // Delay slightly to let states settle before launching window
       setTimeout(() => {
@@ -236,22 +273,7 @@ export function ShopProvider({ children }) {
     }
   }, [cartItems, cartSubtotal, discountAmount, deliveryFee, cartTotal, selectedZone, selectedSlot, isGifting, giftingNote, convertPrice, showToast]);
 
-  // Admin inventory updates
-  const updateProductStock = useCallback((productId, variantSku, newStock) => {
-    setProductsList(prev => prev.map(p => {
-      if (p.id === productId) {
-        const updatedVariants = p.variants.map(v => v.sku === variantSku ? { ...v, stock: Math.max(0, newStock) } : v);
-        return { ...p, variants: updatedVariants };
-      }
-      return p;
-    }));
-    showToast(`Stock updated for ${variantSku}`);
-  }, [showToast]);
 
-  const updateOrderStatus = useCallback((orderId, newStatus) => {
-    setOrdersList(prev => prev.map(o => o.id === orderId ? { ...o, status: newStatus } : o));
-    showToast(`Order #${orderId} status set to "${newStatus}"`);
-  }, [showToast]);
 
   const addCorporateQuote = useCallback((quoteData) => {
     const newQuote = {
@@ -275,7 +297,7 @@ export function ShopProvider({ children }) {
       activeFilters, setActiveFilters,
       sortBy, setSortBy,
 
-      productsList, updateProductStock,
+      productsList,
       cartItems, cartCount, cartSubtotal, discountAmount, deliveryFee, cartTotal,
       isCartOpen, setIsCartOpen,
       isCheckoutOpen, setIsCheckoutOpen,
@@ -291,12 +313,16 @@ export function ShopProvider({ children }) {
       giftingNote, setGiftingNote, isGifting, setIsGifting,
       appliedPromo, setAppliedPromo, promoCodes, setPromoCodes,
 
-      ordersList, updateOrderStatus,
+      ordersList,
       corporateQuotes, addCorporateQuote,
 
       addToCart, removeFromCart, updateQuantity,
       orderConfirmed, setOrderConfirmed, placeOrder,
       toastMessage, showToast,
+
+      WHATSAPP_BUSINESS_NUMBER,
+      PAYPAL_ME_LINK,
+      PAYPAL_EMAIL,
     }}>
       {children}
     </ShopContext.Provider>

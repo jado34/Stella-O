@@ -17,6 +17,8 @@ import OrderConfirmation from './components/OrderConfirmation';
 import AccountDrawer from './components/AccountDrawer';
 import CorporateQuoteModal from './components/CorporateQuoteModal';
 import Footer from './components/Footer';
+import PrivacyPage from './components/PrivacyPage';
+import TermsPage from './components/TermsPage';
 
 function MainContent() {
   const { activeView, toastMessage, selectedProduct } = useShop();
@@ -39,6 +41,8 @@ function MainContent() {
         {activeView === 'gallery' && <GalleryPage />}
         {activeView === 'contact' && <ContactPage />}
         {activeView === 'faq' && <FaqPage />}
+        {activeView === 'privacy' && <PrivacyPage />}
+        {activeView === 'terms' && <TermsPage />}
       </main>
 
       <Footer />

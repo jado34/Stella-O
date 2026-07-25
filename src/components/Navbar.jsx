@@ -11,7 +11,7 @@ export default function Navbar() {
     cartCount, setIsCartOpen, setIsAccountOpen,
     currency, setCurrency, setActiveCategory,
     activeCategory, searchQuery, setSearchQuery,
-    activeView, setActiveView,
+    activeView, setActiveView, WHATSAPP_BUSINESS_NUMBER
   } = useShop();
 
   const [scrolled, setScrolled] = useState(false);
@@ -83,8 +83,8 @@ export default function Navbar() {
 
           {/* Center: Brand Logomark */}
           <button className="nav-logo" onClick={() => handleViewSelect('home')}>
-            <span className="nav-logo-title serif">STELLA O</span>
-            <span className="nav-logo-sub">AFRO SHOP</span>
+            <span className="nav-logo-title serif">AFRIFOOD</span>
+            <span className="nav-logo-sub">BASKET</span>
           </button>
 
           {/* Right: Actions */}
@@ -170,7 +170,7 @@ export default function Navbar() {
 
       {/* Floating Bottom-Right WhatsApp Concierge Widget (matching zttw screenshot) */}
       <a
-        href="https://wa.me/234800746759"
+        href={`https://wa.me/${WHATSAPP_BUSINESS_NUMBER.replace(/[^0-9]/g, '')}`}
         target="_blank"
         rel="noreferrer"
         className="floating-whatsapp-widget"
@@ -190,8 +190,8 @@ export default function Navbar() {
           <div className="mobile-menu anim-slide-right">
             <div className="mobile-menu-header">
               <div>
-                <span className="nav-logo-title serif" style={{ fontSize: 24, color: 'var(--charcoal-text)' }}>STELLA O</span>
-                <span className="nav-logo-sub">AFRO SHOP</span>
+                <span className="nav-logo-title serif" style={{ fontSize: 24, color: 'var(--charcoal-text)' }}>AFRIFOOD</span>
+                <span className="nav-logo-sub">BASKET</span>
               </div>
               <button onClick={() => setMobileOpen(false)}><X size={20} /></button>
             </div>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { X, MapPin, Clock, CreditCard, Smartphone, Building2, ChevronRight, Gift } from 'lucide-react';
+import { X, MapPin, Clock, CreditCard, Smartphone, Building2, ChevronRight, Gift, ChevronDown, ShoppingBag, Wallet, ExternalLink } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
 import { deliveryZones } from '../data/products';
+import WhatsAppIcon from './WhatsAppIcon';
 
 const STEPS = ['Zone & Delivery Slot', 'Recipient & Address', 'Payment Gateway', 'Review & Confirm'];
 
@@ -13,7 +14,8 @@ export default function CheckoutModal() {
     selectedZone, setSelectedZone,
     isGifting, giftingNote,
     placeOrder,
-    currentUser, setIsAccountOpen, showToast
+    currentUser, setIsAccountOpen, showToast,
+    WHATSAPP_BUSINESS_NUMBER, PAYPAL_ME_LINK, PAYPAL_EMAIL
   } = useShop();
 
   const [step, setStep] = useState(0);
@@ -23,8 +25,9 @@ export default function CheckoutModal() {
     phone: '',
     address: '',
   });
-  const [payMethod, setPayMethod] = useState('card');
+  const [payMethod, setPayMethod] = useState('paypal_whatsapp');
   const [useGuest, setUseGuest] = useState(true);
+  const [showMobileSummary, setShowMobileSummary] = useState(false);
 
   // Sync contact state and guest mode with currentUser
   useEffect(() => {
@@ -106,6 +109,44 @@ export default function CheckoutModal() {
 
         <div className="checkout-body">
           <div className="checkout-main">
+            {/* Mobile Order Summary (Visible only on mobile) */}
+            <div className="mobile-summary-toggle-wrapper">
+              <button
+                type="button"
+                className="mobile-summary-toggle-btn"
+                onClick={() => setShowMobileSummary(!showMobileSummary)}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <ShoppingBag size={14} style={{ color: 'var(--gold)' }} />
+                  <span>{showMobileSummary ? 'Hide Order Summary' : 'Show Order Summary'}</span>
+                  <ChevronDown size={12} style={{ transform: showMobileSummary ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s', color: 'var(--text-muted)' }} />
+                </div>
+                <span className="serif" style={{ fontSize: 13, color: 'var(--gold)', fontWeight: 700 }}>{convertPrice(cartTotal)}</span>
+              </button>
+              {showMobileSummary && (
+                <div className="mobile-summary-content anim-slide-up">
+                  {cartItems.map(item => (
+                    <div key={item.key} className="mobile-summary-item">
+                      <img src={item.product.image} alt="" />
+                      <div className="item-details">
+                        <p className="item-name">{item.product.name}</p>
+                        <p className="item-qty">{item.variant.label} × {item.quantity}</p>
+                      </div>
+                      <p className="item-price serif">{convertPrice(item.variant.price * item.quantity)}</p>
+                    </div>
+                  ))}
+                  <div className="mobile-summary-totals">
+                    <div className="row"><span>Subtotal</span><span>{convertPrice(cartSubtotal)}</span></div>
+                    <div className="row"><span>Delivery ({selectedZone?.name || 'Not Selected'})</span><span>+{convertPrice(deliveryFee)}</span></div>
+                    <div className="row total">
+                      <span>Total</span>
+                      <span className="serif">{convertPrice(cartTotal)}</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
             {/* Step 0: Zone & Delivery Slot Picker */}
             {step === 0 && (
               <div className="anim-slide-up">
@@ -256,12 +297,11 @@ export default function CheckoutModal() {
             {/* Step 2: Payment Gateway */}
             {step === 2 && (
               <div className="anim-slide-up">
-                <h4 className="checkout-section-title serif">Select Payment Gateway</h4>
+                <h4 className="checkout-section-title serif">Select Payment Method</h4>
                 <div className="pay-methods">
                   {[
-                    { id: 'card', icon: CreditCard, label: 'Paystack / Flutterwave Gateway', sub: 'Pay with Local/Intl Cards, Bank Transfer, or USSD (Instant Webhook Reconciliation)' },
+                    { id: 'paypal_whatsapp', icon: Wallet, label: 'PayPal & WhatsApp Checkout', sub: `Send PayPal payment to ${PAYPAL_EMAIL}, then confirm and send order details on WhatsApp` },
                     { id: 'bank', icon: Building2, label: 'Direct Bank Transfer via WhatsApp', sub: 'Send order details to Stella on WhatsApp to pay via bank transfer (recommended for trust)' },
-                    { id: 'ussd', icon: Smartphone, label: 'USSD Code Charge', sub: '*737#, *901#, *894#, *919#' },
                   ].map(m => (
                     <button
                       key={m.id}
@@ -277,28 +317,58 @@ export default function CheckoutModal() {
                   ))}
                 </div>
 
-                {payMethod === 'card' && (
-                  <div className="card-mock-form" style={{ marginTop: 16, padding: 16, borderRadius: 6, border: '1px solid var(--border)', background: 'var(--cream-bg)' }}>
-                    <p style={{ fontSize: 10, color: 'var(--gold)', fontWeight: 700, marginBottom: 4, letterSpacing: '0.1em' }}>PAYSTACK / FLUTTERWAVE INSTANT POPUP</p>
-                    <p style={{ fontSize: 11, color: 'var(--text-muted)', marginBottom: 10 }}>
-                      Payments are processed in NGN. Diaspora card transactions will be automatically converted by your bank.
+                {payMethod === 'paypal_whatsapp' && (
+                  <div className="paypal-details" style={{ marginTop: 16, padding: 16, borderRadius: 6, border: '1px solid var(--border)', background: 'var(--cream-bg)' }}>
+                    <p style={{ fontSize: 10, color: 'var(--gold)', fontWeight: 700, marginBottom: 8, letterSpacing: '0.1em' }}>PAYPAL PAYMENT INSTRUCTIONS</p>
+                    <p style={{ fontSize: 12, color: 'var(--text-muted)', marginBottom: 12 }}>
+                      Send payment manually to client's PayPal, then send us your receipt on WhatsApp:
                     </p>
-                    <div className="form-grid">
-                      <div style={{ gridColumn: '1 / -1' }}>
-                        <label className="form-label">Card Holder Name</label>
-                        <input className="input-field" placeholder="e.g. Adebayo Ogunlesi" />
+                    
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 10, fontSize: 12 }}>
+                      <div className="paypal-instruction-item" style={{ background: '#FFFFFF', padding: 12, borderRadius: 6, border: '1px solid var(--border)' }}>
+                        <span style={{ color: 'var(--text-muted)', display: 'block', fontSize: 10, fontWeight: 700, marginBottom: 4 }}>OPTION 1: PAYPAL.ME LINK</span>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8 }}>
+                          <a href={PAYPAL_ME_LINK} target="_blank" rel="noreferrer" style={{ color: 'var(--gold)', fontWeight: 600, textDecoration: 'underline', display: 'flex', alignItems: 'center', gap: 4, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                            {PAYPAL_ME_LINK} <ExternalLink size={12} style={{ flexShrink: 0 }} />
+                          </a>
+                          <button 
+                            type="button" 
+                            className="guest-opt-btn" 
+                            style={{ fontSize: 10, padding: '4px 8px', flexShrink: 0 }}
+                            onClick={() => {
+                              navigator.clipboard.writeText(PAYPAL_ME_LINK);
+                              showToast('PayPal link copied!');
+                            }}
+                          >
+                            Copy Link
+                          </button>
+                        </div>
                       </div>
-                      <div style={{ gridColumn: '1 / -1' }}>
-                        <label className="form-label">Card Number</label>
-                        <input className="input-field" placeholder="5399 0000 1234 5678" maxLength={19} />
+
+                      <div className="paypal-instruction-item" style={{ background: '#FFFFFF', padding: 12, borderRadius: 6, border: '1px solid var(--border)' }}>
+                        <span style={{ color: 'var(--text-muted)', display: 'block', fontSize: 10, fontWeight: 700, marginBottom: 4 }}>OPTION 2: PAYPAL EMAIL</span>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8 }}>
+                          <strong style={{ color: 'var(--charcoal-text)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{PAYPAL_EMAIL}</strong>
+                          <button 
+                            type="button" 
+                            className="guest-opt-btn" 
+                            style={{ fontSize: 10, padding: '4px 8px', flexShrink: 0 }}
+                            onClick={() => {
+                              navigator.clipboard.writeText(PAYPAL_EMAIL);
+                              showToast('PayPal email copied!');
+                            }}
+                          >
+                            Copy Email
+                          </button>
+                        </div>
                       </div>
-                      <div>
-                        <label className="form-label">Expiry Date</label>
-                        <input className="input-field" placeholder="08 / 28" />
-                      </div>
-                      <div>
-                        <label className="form-label">CVV / CVC</label>
-                        <input className="input-field" placeholder="382" maxLength={3} type="password" />
+
+                      <div style={{ borderTop: '1px solid var(--border)', paddingTop: 12, marginTop: 4, display: 'flex', flexDirection: 'column', gap: 4 }}>
+                        <span style={{ color: 'var(--text-muted)' }}>Total Amount Payable:</span>
+                        <span style={{ fontSize: 20, color: 'var(--gold)', fontWeight: 700 }} className="serif">{convertPrice(cartTotal)}</span>
+                        <p style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 4, lineHeight: 1.4 }}>
+                          ℹ️ Send the payment above to our PayPal, then click **Next** to review, and finally click **Send Order via WhatsApp** to share the receipt and place the order.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -313,7 +383,7 @@ export default function CheckoutModal() {
                       <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: 'var(--text-muted)' }}>Account Number:</span><strong style={{ color: 'var(--gold)' }}>012-3456-789</strong></div>
                       <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border)', paddingTop: 6, marginTop: 4 }}>
                         <span style={{ color: 'var(--text-muted)' }}>Please send receipt to WhatsApp:</span>
-                        <strong style={{ color: 'var(--green-fresh)' }}>+234 800 746 759</strong>
+                        <strong style={{ color: 'var(--green-fresh)' }}>{WHATSAPP_BUSINESS_NUMBER}</strong>
                       </div>
                     </div>
                   </div>
@@ -357,6 +427,15 @@ export default function CheckoutModal() {
                   <p style={{ marginLeft: 19 }}>{contact.address}</p>
                   <p style={{ marginLeft: 19, color: 'var(--gold)', marginTop: 2 }}>📅 Window: {selectedSlot?.date} ({selectedSlot?.time})</p>
                 </div>
+
+                {payMethod === 'paypal_whatsapp' && (
+                  <div style={{ marginTop: 12, padding: 12, border: '1px solid var(--border)', borderRadius: 6, fontSize: 11, color: 'var(--text-muted)', background: 'var(--cream-bg)' }}>
+                    <p style={{ color: 'var(--charcoal-text)', fontWeight: 600, marginBottom: 4 }}>💳 PayPal Payment Instructions</p>
+                    <p style={{ lineHeight: 1.4 }}>
+                      Please ensure you have sent the payment to <a href={PAYPAL_ME_LINK} target="_blank" rel="noreferrer" style={{ color: 'var(--gold)', textDecoration: 'underline', fontWeight: 600 }}>{PAYPAL_ME_LINK}</a> (or PayPal email: <strong>{PAYPAL_EMAIL}</strong>). Clicking the button below will open WhatsApp so you can send your order reference and attach your receipt screenshot.
+                    </p>
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -398,10 +477,23 @@ export default function CheckoutModal() {
             className="btn-primary"
             onClick={handleNext}
             disabled={!canNext()}
-            style={{ opacity: canNext() ? 1 : 0.5 }}
+            style={{ 
+              opacity: canNext() ? 1 : 0.5,
+              background: (step === STEPS.length - 1 && (payMethod === 'bank' || payMethod === 'paypal_whatsapp')) ? '#25D366' : '',
+              borderColor: (step === STEPS.length - 1 && (payMethod === 'bank' || payMethod === 'paypal_whatsapp')) ? '#25D366' : '',
+              boxShadow: (step === STEPS.length - 1 && (payMethod === 'bank' || payMethod === 'paypal_whatsapp')) ? '0 4px 14px rgba(37, 211, 102, 0.35)' : '',
+              gap: 8
+            }}
           >
-            {step === STEPS.length - 1 ? (payMethod === 'bank' ? 'SEND ORDER TO WHATSAPP' : 'PLACE ORDER') : `NEXT: ${STEPS[step + 1].toUpperCase()}`}
-            <ChevronRight size={15} />
+            {step === STEPS.length - 1 && (payMethod === 'bank' || payMethod === 'paypal_whatsapp') && (
+              <WhatsAppIcon size={16} color="#FFFFFF" fill="#25D366" />
+            )}
+            {step === STEPS.length - 1 
+              ? ((payMethod === 'bank' || payMethod === 'paypal_whatsapp') ? 'SEND ORDER TO WHATSAPP' : 'PLACE ORDER') 
+              : `NEXT: ${STEPS[step + 1].toUpperCase()}`}
+            {!(step === STEPS.length - 1 && (payMethod === 'bank' || payMethod === 'paypal_whatsapp')) && (
+              <ChevronRight size={15} />
+            )}
           </button>
         </div>
       </div>
@@ -471,6 +563,94 @@ export default function CheckoutModal() {
         .review-row { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
         .review-row.discount { color: var(--gold); }
         .review-total-row { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--border); padding-top: 8px; margin-top: 4px; font-size: 13px; color: var(--charcoal-text); }
+
+        .mobile-summary-toggle-wrapper {
+          display: none;
+          background: var(--cream-bg);
+          border: 1px solid var(--border);
+          border-radius: 6px;
+          margin-bottom: 16px;
+          overflow: hidden;
+        }
+        .mobile-summary-toggle-btn {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 12px 16px;
+          font-size: 12px;
+          font-weight: 600;
+          color: var(--charcoal-text);
+          background: #FFFFFF;
+          border-bottom: 1px solid var(--border);
+        }
+        .mobile-summary-content {
+          padding: 14px 16px;
+          background: var(--cream-bg);
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .mobile-summary-item {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+        .mobile-summary-item img {
+          width: 36px;
+          height: 36px;
+          border-radius: 4px;
+          object-fit: cover;
+        }
+        .mobile-summary-item .item-details {
+          flex: 1;
+          min-width: 0;
+        }
+        .mobile-summary-item .item-name {
+          font-size: 11px;
+          font-weight: 600;
+          color: var(--charcoal-text);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .mobile-summary-item .item-qty {
+          font-size: 10px;
+          color: var(--text-muted);
+        }
+        .mobile-summary-item .item-price {
+          font-size: 11px;
+          color: var(--gold);
+          font-weight: 600;
+        }
+        .mobile-summary-totals {
+          border-top: 1px solid var(--border);
+          padding-top: 10px;
+          margin-top: 6px;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
+        .mobile-summary-totals .row {
+          display: flex;
+          justify-content: space-between;
+          font-size: 11px;
+          color: var(--text-muted);
+        }
+        .mobile-summary-totals .row.total {
+          border-top: 1px solid var(--border);
+          padding-top: 8px;
+          margin-top: 4px;
+          font-size: 14px;
+          color: var(--gold);
+          font-weight: 700;
+        }
+
+        @media (max-width: 720px) {
+          .mobile-summary-toggle-wrapper {
+            display: block;
+          }
+        }
       `}</style>
     </>
   );

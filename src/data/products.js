@@ -46,7 +46,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Traditional',
     tags: ['organic', 'gluten-free'],
-    origin: 'Oyo State',
+    origin: 'Nigeria',
     description: 'Fermented and sun-dried white yam peels, milled locally. Yields an authentic dark-brown swallow with the perfect soft, stretchy texture loved across Yoruba households.',
     freshnessNote: 'Keep in an airtight container to prevent weevils and moisture absorption.',
     variants: [
@@ -64,7 +64,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Best Seller',
     tags: ['gluten-free'],
-    origin: 'Ekiti State',
+    origin: 'Nigeria',
     description: "Stella's hand-selected dried yam slices ground into a fine white flour. Stretches perfectly without lumps when prepared in boiling water — just like fresh pounded yam.",
     freshnessNote: 'Keep bag sealed. Store away from ground dampness.',
     variants: [
@@ -82,7 +82,7 @@ export const products = [
     storage: 'ambient',
     badge: "Stella's Pick",
     tags: ['organic', 'gluten-free', 'vegan'],
-    origin: 'Edo State',
+    origin: 'Nigeria',
     description: 'Dried unripe plantain milled into a smooth flour. Light on the stomach, slightly tangy, and pairs exceptionally with draw soups like Ogbono or Okra.',
     freshnessNote: 'Store sealed in a cool dry place.',
     variants: [
@@ -99,7 +99,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Traditional',
     tags: ['organic', 'gluten-free', 'vegan'],
-    origin: 'Anambra State',
+    origin: 'Nigeria',
     description: 'Made from dried cassava, ground into a smooth, fine flour. Fermented lightly for that characteristic sour note and pliable swallow texture.',
     freshnessNote: 'Keep sealed and away from direct sunlight.',
     variants: [
@@ -152,7 +152,7 @@ export const products = [
     storage: 'ambient',
     badge: "Stella's Pick",
     tags: ['organic', 'gluten-free'],
-    origin: 'Ogun State (Ijebu)',
+    origin: 'Nigeria',
     description: 'Very dry, sharp, and sour Ijebu Garri. Sourced directly from a family cooperative in Ijebu. Floats beautifully when soaked and rises cleanly for Eba.',
     freshnessNote: 'Seal tightly after opening to prevent moisture absorption.',
     variants: [
@@ -165,12 +165,12 @@ export const products = [
   },
   {
     id: 8,
-    name: 'Garri (Yellow) – Red Oil Blend',
+    name: 'Garri (Yellow)',
     category: 'flours',
     storage: 'ambient',
     badge: 'Popular',
     tags: ['organic'],
-    origin: 'Delta State',
+    origin: 'Nigeria',
     description: 'Cassava mash fried with a touch of fresh palm oil for that traditional golden colour and rich, smooth swallow texture. Perfect for thick Eba pairing with pepper soup.',
     freshnessNote: 'Store ambient. Avoid direct heat. Shelf life 6 months from packaging.',
     variants: [
@@ -179,7 +179,7 @@ export const products = [
       { label: '5kg', price: 12000, sku: 'FLR-GARY-5KG', stock: 30 },
     ],
     pairsWell: [41, 21],
-    image: 'https://images.unsplash.com/photo-1594221708779-94832f4320d1?w=600&q=80',
+    image: '/garri_yellow.png',
   },
   {
     id: 9,
@@ -188,7 +188,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Delta Classic',
     tags: ['gluten-free'],
-    origin: 'Delta State',
+    origin: 'Nigeria',
     description: 'A Delta State staple — processed cassava starch giving a glassy, stretchy, and uniquely textured swallow that pairs perfectly with Banga soup.',
     freshnessNote: 'Store sealed in a cool dry place.',
     variants: [
@@ -196,7 +196,7 @@ export const products = [
       { label: '2kg', price: 4200, sku: 'FLR-STR-2KG', stock: 35 },
     ],
     pairsWell: [26, 52],
-    image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80',
+    image: '/starch.png',
   },
   {
     id: 10,
@@ -213,11 +213,11 @@ export const products = [
       { label: '2kg', price: 3400, sku: 'FLR-WHT-2KG', stock: 100 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&q=80',
+    image: '/wheat.jpg',
   },
   {
     id: 11,
-    name: 'Oat Fufu Flour',
+    name: 'Oat Flour',
     category: 'flours',
     storage: 'ambient',
     badge: 'Health Pick',
@@ -229,7 +229,7 @@ export const products = [
       { label: '1kg', price: 3200, sku: 'FLR-OAT-1KG', stock: 50 },
     ],
     pairsWell: [41, 42],
-    image: 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=600&q=80',
+    image: '/oats.jpg',
   },
   {
     id: 12,
@@ -238,7 +238,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Snack & Swallow',
     tags: ['gluten-free', 'vegan'],
-    origin: 'Rivers State',
+    origin: 'Nigeria',
     description: 'Processed cassava pearls — enjoyed as a chilled snack soaked with coconut milk, or used as a base for light swallow. A versatile pantry staple.',
     freshnessNote: 'Store sealed. Keep dry.',
     variants: [
@@ -256,7 +256,7 @@ export const products = [
     storage: 'ambient',
     badge: "Stella's Special",
     tags: ['organic', 'unpolished'],
-    origin: 'Ogun State (Ofada)',
+    origin: 'Nigeria',
     description: 'Unpolished short-grain rice with its natural brown bran layers intact. Cleaned three times to ensure it is completely stone-free. Deliciously aromatic.',
     freshnessNote: 'Store in an airtight jar. Boil with a little salt for maximum aroma.',
     variants: [
@@ -275,7 +275,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Daily Essential',
     tags: [],
-    origin: 'Nigerian Farmers',
+    origin: 'Nigeria',
     description: 'Premium parboiled local long-grain rice. Extremely clean, dry, and expands beautifully. Excellent for home-style Nigerian party Jollof.',
     freshnessNote: 'Store in a dry room. Protect from direct moisture.',
     variants: [
@@ -308,7 +308,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Aromatic',
     tags: [],
-    origin: 'Imported',
+    origin: 'Nigeria',
     description: 'Long-grain fragrant Basmati with a distinct nutty aroma. Perfect for special occasions or Nigerian-fusion dishes.',
     freshnessNote: 'Store sealed and away from moisture.',
     variants: [
@@ -344,7 +344,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Fast Seller',
     tags: ['vegan', 'organic'],
-    origin: 'Niger State',
+    origin: 'Nigeria',
     description: 'Prized for its natural sweet taste and very short cooking time. Hand-cleaned before packing so you spend less time picking stones at home.',
     freshnessNote: 'Keep dry. Standard shelf life 6 months.',
     variants: [
@@ -364,7 +364,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Moi Moi Grade',
     tags: ['vegan'],
-    origin: 'Plateau State',
+    origin: 'Nigeria',
     description: 'Firm brown beans excellent for Gbegiri soup, Moi Moi, and Akara. Carefully sorted and cleaned before packaging.',
     freshnessNote: 'Store in an airtight container in a cool dry place.',
     variants: [
@@ -382,7 +382,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Akara Perfect',
     tags: ['vegan', 'high-protein'],
-    origin: 'Kano State',
+    origin: 'Nigeria',
     description: 'Creamy white beans with a distinctive black spot. The ideal bean for fluffy, crispy Akara or light Moi Moi.',
     freshnessNote: 'Keep dry and sealed.',
     variants: [
@@ -396,12 +396,12 @@ export const products = [
   // OILS & FATS
   {
     id: 21,
-    name: 'Pure Virgin Red Palm Oil',
+    name: 'Red Palm Oil',
     category: 'oils',
     storage: 'ambient',
     badge: '100% Unrefined',
     tags: ['organic', 'unrefined'],
-    origin: 'Edo State',
+    origin: 'Nigeria',
     description: 'Sourced from local smallholder mills in Edo. No colour additives, no mixing. Thick, rich red palm oil with the authentic earthy taste that defines Nigerian cooking.',
     freshnessNote: 'Store at room temperature. Do not refrigerate as it solidifies naturally.',
     variants: [
@@ -410,7 +410,7 @@ export const products = [
       { label: '5L', price: 16000, sku: 'OIL-PLM-5L', stock: 20 },
     ],
     pairsWell: [41, 18, 1],
-    image: '/palm_oil_bottle.png',
+    image: '/palm_oil.jpg',
   },
   {
     id: 22,
@@ -419,7 +419,7 @@ export const products = [
     storage: 'ambient',
     badge: "Stella's Pick",
     tags: ['organic'],
-    origin: 'Ogun State (Ofada)',
+    origin: 'Nigeria',
     description: "A deeper, more intensely flavoured palm oil milled from the same cooperative that supplies Stella's Ofada Rice. Pairs magnificently with Ofada stew.",
     freshnessNote: 'Keep sealed and at room temperature.',
     variants: [
@@ -437,7 +437,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Light & Clean',
     tags: ['vegan'],
-    origin: 'Kano State',
+    origin: 'Nigeria',
     description: 'Cold-pressed groundnut oil from northern Nigeria. Light, neutral-tasting, and ideal for frying, sautéeing, and baking.',
     freshnessNote: 'Keep away from direct sunlight. Shelf life 12 months.',
     variants: [
@@ -446,7 +446,7 @@ export const products = [
       { label: '5L', price: 20000, sku: 'OIL-GRN-5L', stock: 15 },
     ],
     pairsWell: [101, 77],
-    image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&q=80',
+    image: '/groundnut_oil.png',
   },
   {
     id: 24,
@@ -455,7 +455,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Cold Pressed',
     tags: ['organic', 'vegan'],
-    origin: 'Lagos State',
+    origin: 'Nigeria',
     description: 'Unrefined cold-pressed coconut oil with a mild, natural coconut aroma. Great for cooking, baking, and hair and skin care.',
     freshnessNote: 'May solidify below 25°C — this is natural. Scoop or melt before use.',
     variants: [
@@ -474,7 +474,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Must Have',
     tags: ['halal'],
-    origin: 'Benue State',
+    origin: 'Nigeria',
     description: 'A classic blend of dried spices — calabash nutmeg, selim pepper, rianje, and more — specially combined for the perfect aromatic pepper soup base.',
     freshnessNote: 'Keep jar tightly capped. Avoid steam when scooping.',
     variants: [
@@ -482,7 +482,7 @@ export const products = [
       { label: '250g', price: 3800, sku: 'SPC-PPS-250G', stock: 90 },
     ],
     pairsWell: [53, 63, 108],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/peppersoup_spice.jpg',
   },
   {
     id: 26,
@@ -491,7 +491,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Delta Favourite',
     tags: ['organic'],
-    origin: 'Delta State',
+    origin: 'Nigeria',
     description: 'A carefully blended Banga soup spice including oburunbebe leaves, dried ofor, atama, and aromatic bark. Brings the authentic Delta Banga soup flavour.',
     freshnessNote: 'Keep sealed and dry.',
     variants: [
@@ -508,7 +508,7 @@ export const products = [
     storage: 'ambient',
     badge: "Stella's Secret Blend",
     tags: ['halal'],
-    origin: 'Kano State',
+    origin: 'Nigeria',
     description: 'Real northern-style Yaji rub with roasted ginger, local chili, and toasted kuli-kuli peanuts. Dusty, warm, and carries a fragrant, fiery kick.',
     freshnessNote: 'Keep jar tightly capped. Avoid steam when scooping.',
     variants: [
@@ -516,7 +516,7 @@ export const products = [
       { label: '350g', price: 4500, sku: 'SPC-SUY-350G', stock: 90 },
     ],
     pairsWell: [63, 65, 89],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/suya_spice.jpg',
   },
   {
     id: 28,
@@ -576,7 +576,7 @@ export const products = [
     storage: 'chilled',
     badge: "Stella's Finest",
     tags: ['halal'],
-    origin: 'Cross River State',
+    origin: 'Nigeria',
     description: 'Freshly dried and ground crayfish — the irreplaceable umami flavour backbone of Nigerian soups. Stella sources from the freshest coastal harvests.',
     freshnessNote: 'Refrigerate after opening. Best used within 3 months.',
     variants: [
@@ -593,7 +593,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Fire in a Jar',
     tags: ['organic', 'vegan'],
-    origin: 'Kwara State',
+    origin: 'Nigeria',
     description: 'Sun-dried and ground red chili pepper — spicy, fragrant, and essential for stews, soups, and suya marinades.',
     freshnessNote: 'Keep sealed and away from moisture.',
     variants: [
@@ -610,7 +610,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Signature Heat',
     tags: ['organic'],
-    origin: 'Cross River State',
+    origin: 'Nigeria',
     description: 'Smoky, pungent, and deeply aromatic. Cameroon pepper is the secret depth in native soups and pepper soup. A little goes a long way.',
     freshnessNote: 'Keep sealed and dry.',
     variants: [
@@ -627,7 +627,7 @@ export const products = [
     storage: 'chilled',
     badge: 'Traditional Ferment',
     tags: ['organic'],
-    origin: 'Anambra State',
+    origin: 'Nigeria',
     description: 'Fermented sesame seeds with a pungent, complex aroma. Used in small quantities to deepen egusi, oha, and native soups with earthy, ancient flavour.',
     freshnessNote: 'Keep chilled. Use within 2 months or freeze.',
     variants: [
@@ -643,7 +643,7 @@ export const products = [
     storage: 'chilled',
     badge: 'Yoruba Staple',
     tags: ['organic', 'vegan'],
-    origin: 'Oyo State',
+    origin: 'Nigeria',
     description: 'Fermented locust beans with a sharp, savoury punch. Iru is the heart of Yoruba stews and adds deep umami to egusi, okra, and ewedu soups.',
     freshnessNote: 'Refrigerate. Use within 3 months or freeze for longer preservation.',
     variants: [
@@ -660,7 +660,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Igbo Classic',
     tags: ['organic'],
-    origin: 'Enugu State',
+    origin: 'Nigeria',
     description: 'Dried peppery uziza seeds — a staple in Igbo cooking for native soups and stews. Adds a distinctive warm, aromatic bite.',
     freshnessNote: 'Keep in an airtight container, away from moisture.',
     variants: [
@@ -676,7 +676,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Igbo Classic',
     tags: ['organic', 'vegan'],
-    origin: 'Enugu State',
+    origin: 'Nigeria',
     description: 'Dried uziza leaves with an intense pepper-like aroma. Essential in oha soup, pepper soup, and traditional stews.',
     freshnessNote: 'Keep sealed and dry.',
     variants: [
@@ -692,7 +692,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Soup Secret',
     tags: ['organic'],
-    origin: 'Cross River State',
+    origin: 'Nigeria',
     description: 'Roasted calabash nutmeg seeds ground into a warm, aromatic spice. A key element in pepper soup, ofe onugbu, and abacha spice blends.',
     freshnessNote: 'Keep sealed and away from moisture.',
     variants: [
@@ -743,7 +743,7 @@ export const products = [
     storage: 'chilled',
     badge: 'Freshly Ground',
     tags: ['organic'],
-    origin: 'Benue State',
+    origin: 'Nigeria',
     description: 'Sun-dried melon seeds, hand-peeled to prevent bitter tastes, then ground fresh. The definitive thickener for the most beloved Nigerian soup.',
     freshnessNote: 'Highly perishable. Store in the freezer to maintain quality.',
     variants: [
@@ -760,7 +760,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Guaranteed Draw',
     tags: ['organic'],
-    origin: 'Cross River State',
+    origin: 'Nigeria',
     description: 'Wild African bush mango seeds, dried and milled. Hand-inspected by Stella to ensure high viscosity and premium draw. The definitive draw soup ingredient.',
     freshnessNote: 'Store dry in an airtight jar. Keep away from moisture.',
     variants: [
@@ -777,7 +777,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Igbo Heritage',
     tags: ['organic', 'vegan'],
-    origin: 'Enugu State',
+    origin: 'Nigeria',
     description: 'Dried oha (ora) leaves for the classic Igbo Oha soup. Delicate, earthy flavour that adds unmistakable character to cocoyam-thickened soups.',
     freshnessNote: 'Keep sealed and dry. Use within 6 months.',
     variants: [
@@ -809,7 +809,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Efik Specialty',
     tags: ['organic', 'vegan'],
-    origin: 'Cross River State',
+    origin: 'Nigeria',
     description: 'Dried afang leaves for the popular Efik and Ibibio Afang soup. Packed with nutrients and a slightly bitter, aromatic earthiness.',
     freshnessNote: 'Keep sealed and dry.',
     variants: [
@@ -825,7 +825,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Calabar Special',
     tags: ['organic', 'vegan'],
-    origin: 'Akwa Ibom State',
+    origin: 'Nigeria',
     description: 'Dried editan leaves — a key ingredient in Editan soup from Akwa Ibom. Slightly mucilaginous with a complex, forest-herb flavour.',
     freshnessNote: 'Keep sealed and dry.',
     variants: [
@@ -841,7 +841,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Yoruba Essential',
     tags: ['organic', 'vegan'],
-    origin: 'Ogun State',
+    origin: 'Nigeria',
     description: 'Dried jute leaves ground for the classic Yoruba Ewedu soup. Mucilaginous, bright, and the perfect partner for Gbegiri and Amala.',
     freshnessNote: 'Keep sealed and dry.',
     variants: [
@@ -857,7 +857,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Igbo Staple',
     tags: ['organic', 'vegan'],
-    origin: 'Anambra State',
+    origin: 'Nigeria',
     description: 'Dried fluted pumpkin leaves — one of the most nutritious vegetables in Nigerian cooking. Used in Edikaikong, Egusi soup, and vegetable stew.',
     freshnessNote: 'Keep sealed and dry.',
     variants: [
@@ -873,7 +873,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Igbo/Efik Heritage',
     tags: ['organic', 'vegan'],
-    origin: 'Cross River State',
+    origin: 'Nigeria',
     description: 'Dried okazi leaves used in Afang soup and Okazi soup. Firm-textured with a rich, wild green flavour that deepens the soup base.',
     freshnessNote: 'Keep sealed and dry.',
     variants: [
@@ -889,7 +889,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Draw Soup Maker',
     tags: ['organic', 'vegan'],
-    origin: 'Kogi State',
+    origin: 'Nigeria',
     description: 'Sliced and sun-dried okra pods that give excellent viscosity and draw to soups. A great year-round alternative to fresh okra.',
     freshnessNote: 'Keep sealed and dry.',
     variants: [
@@ -921,7 +921,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Ready to Cook',
     tags: [],
-    origin: 'Delta State',
+    origin: 'Nigeria',
     description: 'Ready-made palm nut concentrate for quick and authentic Banga soup. Just add water, spices, and protein to get a restaurant-quality pot.',
     freshnessNote: 'Once opened, refrigerate and use within 7 days.',
     variants: [
@@ -934,13 +934,13 @@ export const products = [
   // FISH & SEAFOOD
   {
     id: 53,
-    name: 'Norwegian Cod Stockfish',
+    name: 'Stockfish',
     category: 'fish',
     storage: 'ambient',
-    badge: 'Imported Grade',
+    badge: 'Premium',
     tags: [],
-    origin: 'Norway (Lofoten)',
-    description: 'Traditional unsalted fish dried by cold air. Highly aromatic, thick-cut flesh. Adds a deep, smoky umami base to native soups.',
+    origin: 'Nigeria',
+    description: 'Traditional dried stockfish (Panla/Okporoko). Highly aromatic, thick-cut flesh. Adds a deep, smoky umami base to native soups.',
     freshnessNote: 'Store in dry pantry. Wash and soak in warm water before cooking.',
     variants: [
       { label: 'Pack of 3 Cuts', price: 7500, sku: 'FSH-STK-3PC', stock: 50 },
@@ -956,7 +956,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Yoruba Staple',
     tags: [],
-    origin: 'Lagos State',
+    origin: 'Nigeria',
     description: 'Sun-smoked catfish with a deep, rich flavour. Perfect for Egusi, Ogbono, Gbegiri soup, and pepper soup base.',
     freshnessNote: 'Store in a dry, cool place. Use within 2 months of purchase.',
     variants: [
@@ -972,7 +972,7 @@ export const products = [
     storage: 'frozen',
     badge: 'Party Favourite',
     tags: [],
-    origin: 'Atlantic Ocean',
+    origin: 'Nigeria',
     description: 'Imported Atlantic mackerel (Titus) — beloved in Nigerian stews, tomato sauce, and pepper soups. Stella selects plump, meaty cuts.',
     freshnessNote: 'Keep frozen. Thaw in refrigerator overnight before cooking.',
     variants: [
@@ -989,7 +989,7 @@ export const products = [
     storage: 'frozen',
     badge: 'Premium Cut',
     tags: [],
-    origin: 'Atlantic Ocean',
+    origin: 'Nigeria',
     description: 'Firm, white-fleshed croaker fish prized for pepper soup and frying. Cleaned and blast-frozen at peak freshness.',
     freshnessNote: 'Keep frozen until ready to cook. Do not refreeze after thawing.',
     variants: [
@@ -1021,7 +1021,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Traditional',
     tags: [],
-    origin: 'Rivers State',
+    origin: 'Nigeria',
     description: 'Assorted smoked river and sea fish — deep, woody aroma that transforms any Nigerian soup into a meal with history.',
     freshnessNote: 'Store in a cool dry place. Consume within 3 weeks.',
     variants: [
@@ -1037,7 +1037,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Flavour Bomb',
     tags: ['halal'],
-    origin: 'Akwa Ibom State',
+    origin: 'Nigeria',
     description: 'Sun-dried shrimps with intense concentrated flavour. Used in egusi soup, jollof rice, and vegetable stew to add a coastal, briny punch.',
     freshnessNote: 'Keep in a sealed container in a cool place.',
     variants: [
@@ -1053,7 +1053,7 @@ export const products = [
     storage: 'chilled',
     badge: "Stella's Finest",
     tags: ['halal'],
-    origin: 'Cross River State',
+    origin: 'Nigeria',
     description: 'Whole dried crayfish and freshly ground packs — sourced from coastal harvests. The essential umami foundation of Nigerian soups.',
     freshnessNote: 'Refrigerate after opening. Use within 3 months.',
     variants: [
@@ -1070,7 +1070,7 @@ export const products = [
     storage: 'chilled',
     badge: 'Premium',
     tags: ['halal'],
-    origin: 'Lagos Coast',
+    origin: 'Nigeria',
     description: 'Lightly smoked prawns with a sweet, oceanic richness. Elevate your Edikaikong, Afang soup, or fried stew instantly.',
     freshnessNote: 'Refrigerate. Use within 5 days of opening or freeze.',
     variants: [
@@ -1088,7 +1088,7 @@ export const products = [
     storage: 'chilled',
     badge: 'Earthy Vibe',
     tags: [],
-    origin: 'Ijebu Mills',
+    origin: 'Nigeria',
     description: 'Soft, slow-smoked cow skin. Thoroughly cleaned, boiled, and ready to go into stew or native soup. Spongy texture that absorbs soup flavours.',
     freshnessNote: 'Keep refrigerated. Consume within 3 days or freeze.',
     variants: [
@@ -1105,7 +1105,7 @@ export const products = [
     storage: 'chilled',
     badge: 'Deep Flavour',
     tags: ['halal'],
-    origin: 'Northern Nigeria',
+    origin: 'Nigeria',
     description: 'Slow-smoked over wood fire, giving deep, charred flavour and tender but firm texture. A premium addition to pepper soup and native soups.',
     freshnessNote: 'Keep chilled. Use within 4 days or freeze.',
     variants: [
@@ -1137,7 +1137,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Northern Tradition',
     tags: ['halal'],
-    origin: 'Kano State',
+    origin: 'Nigeria',
     description: 'Salted and sun-dried beef strips from the north. Intense, chewy, and deeply savoury. Great for soups, stews, and peppered snacks.',
     freshnessNote: 'Store in a cool dry place. Consume within 1 month.',
     variants: [
@@ -1235,7 +1235,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Pantry Staple',
     tags: [],
-    origin: 'Nestle Nigeria',
+    origin: 'Nigeria',
     description: 'Nutritious maize and soya cereal — a national breakfast favourite. Quick to prepare and beloved by children and health-conscious adults.',
     freshnessNote: 'Store dry.',
     variants: [
@@ -1267,7 +1267,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Pantry Must',
     tags: [],
-    origin: 'Nestle Nigeria',
+    origin: 'Nigeria',
     description: 'The iconic Nigerian chocolate malt drink. Enjoyed hot or cold with milk — a must-have breakfast and evening drink across generations.',
     freshnessNote: 'Keep sealed and dry.',
     variants: [
@@ -1283,7 +1283,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Classic',
     tags: [],
-    origin: 'Cadbury Nigeria',
+    origin: 'Nigeria',
     description: "A creamy, cocoa-rich fortified drink beloved across Nigeria. Bournvita has powered generations of Nigerian children's mornings.",
     freshnessNote: 'Keep sealed and dry.',
     variants: [
@@ -1299,7 +1299,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Morning Ritual',
     tags: [],
-    origin: 'Nestle Nigeria',
+    origin: 'Nigeria',
     description: 'Rich, smooth instant coffee — the preferred morning pick-me-up for many Nigerian households. Quick to brew, full of flavour.',
     freshnessNote: 'Keep sealed and dry. Away from humidity.',
     variants: [
@@ -1334,7 +1334,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Cart Favourite',
     tags: [],
-    origin: 'Dufil Prima',
+    origin: 'Nigeria',
     description: 'The definitive instant noodles of Nigeria. Quick to prepare and endlessly customisable with eggs, vegetables, and peppered stew.',
     freshnessNote: 'Store dry.',
     variants: [
@@ -1350,7 +1350,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Nigerian Classic',
     tags: [],
-    origin: 'Golden Penny',
+    origin: 'Nigeria',
     description: "Long, smooth spaghetti from one of Nigeria's most trusted pasta brands. Perfect for Nigerian-style tomato beef or vegetable pasta.",
     freshnessNote: 'Store dry.',
     variants: [
@@ -1433,7 +1433,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Protein Boost',
     tags: [],
-    origin: 'Imported',
+    origin: 'Nigeria',
     description: 'Tender sardine fillets in a rich tomato sauce. Quick, protein-packed meal option — enjoyed with bread, rice, or yam.',
     freshnessNote: 'Refrigerate and use within 3 days after opening.',
     variants: [
@@ -1449,7 +1449,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Lunch Saver',
     tags: [],
-    origin: 'Imported',
+    origin: 'Nigeria',
     description: 'Premium corned beef — the beloved Nigerian lunchtime staple. Stir into stew, mix with eggs, or eat with bread.',
     freshnessNote: 'Refrigerate after opening. Use within 3 days.',
     variants: [
@@ -1465,7 +1465,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Quick Meal',
     tags: ['vegan'],
-    origin: 'Imported',
+    origin: 'Nigeria',
     description: 'Classic baked beans in sweet tomato sauce. A protein-rich, quick-serve pantry essential for busy households.',
     freshnessNote: 'Refrigerate after opening. Use within 4 days.',
     variants: [
@@ -1499,7 +1499,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Crispy & Addictive',
     tags: ['vegan', 'gluten-free'],
-    origin: 'Lagos State',
+    origin: 'Nigeria',
     description: 'Thinly sliced unripe plantain fried to a golden crisp with a perfect light seasoning. Irresistible as a snack or side.',
     freshnessNote: 'Keep sealed. Best within 2 weeks.',
     variants: [
@@ -1515,7 +1515,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Street Classic',
     tags: ['vegan', 'high-protein'],
-    origin: 'Kaduna State',
+    origin: 'Nigeria',
     description: "Freshly roasted peanuts with a light salt coating. Nigeria's most beloved roadside snack — now available in premium packs.",
     freshnessNote: 'Keep sealed away from moisture.',
     variants: [
@@ -1532,7 +1532,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Northern Delight',
     tags: ['vegan', 'high-protein'],
-    origin: 'Kano State',
+    origin: 'Nigeria',
     description: 'Traditional northern groundnut cake — pressed, spiced, and fried to create a crispy, protein-rich snack. Also used in suya spice blends.',
     freshnessNote: 'Keep sealed and dry.',
     variants: [
@@ -1548,7 +1548,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Premium Snack',
     tags: ['vegan', 'high-protein'],
-    origin: 'Oyo State',
+    origin: 'Nigeria',
     description: "Lightly roasted Nigerian cashew nuts — buttery, rich, and satisfying. A premium snack straight from Nigeria's cashew belt.",
     freshnessNote: 'Keep sealed and cool. Best within 6 weeks.',
     variants: [
@@ -1565,7 +1565,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Superfood',
     tags: ['vegan', 'organic', 'gluten-free'],
-    origin: 'Kano State',
+    origin: 'Nigeria',
     description: 'Sweet, crunchy tiger nuts — eaten as a snack, soaked in water, or blended into the popular Kunu Aya drink. High in fibre and natural sugars.',
     freshnessNote: 'Keep sealed and dry.',
     variants: [
@@ -1583,7 +1583,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Nigerian Favourite',
     tags: ['vegan', 'organic'],
-    origin: 'Kano State',
+    origin: 'Nigeria',
     description: "Dried hibiscus flowers for brewing Zobo — Nigeria's beloved deep-red, tangy, and aromatic fruit drink. Rich in antioxidants.",
     freshnessNote: 'Keep sealed and dry.',
     variants: [
@@ -1599,7 +1599,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Wellness',
     tags: ['organic', 'vegan'],
-    origin: 'Kaduna State',
+    origin: 'Nigeria',
     description: 'Finely ground Nigerian ginger — warm, pungent, and intensely aromatic. Adds depth to Zobo, pepper soup, and herbal teas.',
     freshnessNote: 'Keep sealed and away from moisture.',
     variants: [
@@ -1632,7 +1632,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Morning Brew',
     tags: ['vegan'],
-    origin: 'Unilever Nigeria',
+    origin: 'Nigeria',
     description: 'Classic Nigerian breakfast tea — a staple morning beverage enjoyed with milk and sugar across the nation.',
     freshnessNote: 'Keep dry and sealed.',
     variants: [
@@ -1649,7 +1649,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Non-Alcoholic',
     tags: [],
-    origin: 'Guinness Nigeria',
+    origin: 'Nigeria',
     description: 'Rich, sweet, and malty — Malta Guinness is the go-to non-alcoholic refreshment at Nigerian celebrations and everyday meals.',
     freshnessNote: 'Store at room temperature. Best served chilled.',
     variants: [
@@ -1666,7 +1666,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Party Essential',
     tags: [],
-    origin: 'NBC Nigeria',
+    origin: 'Nigeria',
     description: 'The world-famous cola — a staple at every Nigerian party table alongside Jollof rice and peppered chicken.',
     freshnessNote: 'Store cool. Best served chilled.',
     variants: [
@@ -1683,7 +1683,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Celebration Drink',
     tags: [],
-    origin: 'NBC Nigeria',
+    origin: 'Nigeria',
     description: 'Bright, bubbly, and sweet orange Fanta — the beloved companion to suya and jollof at every Nigerian celebration.',
     freshnessNote: 'Store cool. Best served chilled.',
     variants: [
@@ -1700,7 +1700,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Cool & Crisp',
     tags: [],
-    origin: 'NBC Nigeria',
+    origin: 'Nigeria',
     description: 'Clean, crisp lemon-lime fizz — a refreshing palate cleanser between rich Nigerian courses.',
     freshnessNote: 'Store cool. Best served chilled.',
     variants: [
@@ -1719,7 +1719,7 @@ export const products = [
     storage: 'ambient',
     badge: 'New Yam Season',
     tags: ['organic'],
-    origin: 'Benue State (Yam Belt)',
+    origin: 'Nigeria',
     description: 'Dry, sweet yams sourced directly from Benue farmers. Excellent for boiling, frying, pounding, or porridge.',
     freshnessNote: 'Perishable: Store in a dark, airy corner. Do not place on bare concrete floors.',
     variants: [
@@ -1736,7 +1736,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Daily Favourite',
     tags: ['organic', 'vegan'],
-    origin: 'Lagos State',
+    origin: 'Nigeria',
     description: 'Locally sourced plantains — select ripe for sweet fried dodo or unripe for boiled plantain and bole. Hand-inspected for quality.',
     freshnessNote: 'Ripen at room temperature. Use within 4 days of ripening.',
     variants: [
@@ -1752,7 +1752,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Soup Thickener',
     tags: ['organic', 'vegan'],
-    origin: 'Anambra State',
+    origin: 'Nigeria',
     description: 'Small, starchy cocoyam tubers — the traditional thickener for Oha soup, Edikaikong, and other native soups.',
     freshnessNote: 'Keep in a cool, dry, airy space. Use within 2 weeks.',
     variants: [
@@ -1768,7 +1768,7 @@ export const products = [
     storage: 'chilled',
     badge: 'Stew Base',
     tags: ['organic', 'vegan'],
-    origin: 'Kano State',
+    origin: 'Nigeria',
     description: 'A mixed selection of red bell (tatashe) and scotch bonnet chili peppers — the essential starting point for any Nigerian stew or sauce.',
     freshnessNote: 'Refrigerate. Use within 5 days or blend and freeze.',
     variants: [
@@ -1785,7 +1785,7 @@ export const products = [
     storage: 'chilled',
     badge: 'Sauce Ready',
     tags: ['organic', 'vegan'],
-    origin: 'Kaduna State',
+    origin: 'Nigeria',
     description: 'Firm, ripe Nigerian plum tomatoes — the backbone of every Jollof rice, stew, and sauce. Clean and hand-sorted.',
     freshnessNote: 'Keep refrigerated. Best used within 5 days.',
     variants: [
@@ -1802,7 +1802,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Base Ingredient',
     tags: ['organic', 'vegan'],
-    origin: 'Kano State',
+    origin: 'Nigeria',
     description: 'Pungent, firm red onions from Kano. No Nigerian pot starts without it — essential for stew base, Jollof rice, and soup.',
     freshnessNote: 'Store in a cool, dry, airy place away from direct sunlight.',
     variants: [
@@ -1819,7 +1819,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Wellness Root',
     tags: ['organic', 'vegan'],
-    origin: 'Kaduna State',
+    origin: 'Nigeria',
     description: 'Fresh, pungent Nigerian ginger root. Blended into Zobo drinks, pepper soup, and herbal remedies for its warming and medicinal properties.',
     freshnessNote: 'Store at room temperature for 2 weeks or refrigerate for up to 1 month.',
     variants: [
@@ -1835,7 +1835,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Flavour Base',
     tags: ['organic', 'vegan'],
-    origin: 'Plateau State',
+    origin: 'Nigeria',
     description: 'Fresh garlic bulbs with strong, clean aroma. Used in pepper soup, stews, and marinades for depth and fragrance.',
     freshnessNote: 'Store in a cool, dry, airy place. Keeps for 3–4 weeks.',
     variants: [
@@ -1966,7 +1966,7 @@ export const products = [
     storage: 'frozen',
     badge: 'Fresh Water',
     tags: ['halal'],
-    origin: 'Kogi State',
+    origin: 'Nigeria',
     description: 'Farm-raised freshwater tilapia fish. Mild, white-fleshed, and excellent grilled, fried, or in pepper soup.',
     freshnessNote: 'Keep frozen. Thaw before cooking. Do not refreeze.',
     variants: [
@@ -1982,7 +1982,7 @@ export const products = [
     storage: 'frozen',
     badge: 'Stew Favourite',
     tags: [],
-    origin: 'Atlantic Ocean',
+    origin: 'Nigeria',
     description: 'Plump Atlantic mackerel (Titus) blast-frozen for Nigerian stews and sauces. The most requested fish for tomato pepper stew.',
     freshnessNote: 'Keep frozen. Thaw overnight before cooking.',
     variants: [
@@ -1998,7 +1998,7 @@ export const products = [
     storage: 'frozen',
     badge: 'Clean Flesh',
     tags: [],
-    origin: 'Atlantic Ocean',
+    origin: 'Nigeria',
     description: 'Firm-fleshed hake fish with a delicate, mild flavour. Excellent for frying, baking, or adding to light broth soups.',
     freshnessNote: 'Keep frozen. Thaw in refrigerator before cooking.',
     variants: [
@@ -2080,7 +2080,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Creamy',
     tags: ['vegan', 'gluten-free'],
-    origin: 'Imported',
+    origin: 'Nigeria',
     description: 'Rich, creamy canned coconut milk for Nigerian-fusion cooking, coconut jollof, desserts, and Tapioca snacks.',
     freshnessNote: 'Refrigerate after opening. Use within 4 days.',
     variants: [
@@ -2096,7 +2096,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Healthy Bake',
     tags: ['gluten-free', 'vegan'],
-    origin: 'Edo State',
+    origin: 'Nigeria',
     description: 'Unripe plantain dried and milled into a nutritious, gluten-free flour suitable for baking, porridge, and swallow.',
     freshnessNote: 'Keep sealed in a cool dry place.',
     variants: [
@@ -2112,7 +2112,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Swallow Base',
     tags: ['gluten-free', 'vegan'],
-    origin: 'Oyo State',
+    origin: 'Nigeria',
     description: 'Ground dried yam peels for making Amala swallow. Consistent dark-brown colour and smooth texture when prepared.',
     freshnessNote: 'Keep sealed and dry.',
     variants: [
@@ -2176,7 +2176,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Baking & Snacking',
     tags: ['vegan', 'gluten-free'],
-    origin: 'Lagos State',
+    origin: 'Nigeria',
     description: 'Dried shredded coconut flesh — used in Nigerian coconut rice, coconut chin chin, and coconut candy. Also a satisfying snack.',
     freshnessNote: 'Keep sealed and cool.',
     variants: [
@@ -2192,7 +2192,7 @@ export const products = [
     storage: 'ambient',
     badge: 'Gluten-Free Bake',
     tags: ['vegan', 'gluten-free', 'high-fibre'],
-    origin: 'Kano State',
+    origin: 'Nigeria',
     description: 'Finely milled tigernut flour — naturally sweet, high-fibre, and an excellent gluten-free alternative for baking, smoothies, and Kunu Aya drink.',
     freshnessNote: 'Keep sealed and dry.',
     variants: [

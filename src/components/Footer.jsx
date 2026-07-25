@@ -36,7 +36,7 @@ export default function Footer() {
             </div>
             {subscribed ? (
               <div className="subscribed-badge">
-                ✓ You are subscribed to Stella Oharvest updates.
+                ✓ You are subscribed to AfriFood Basket harvest updates.
               </div>
             ) : (
               <form className="newsletter-form" onSubmit={handleSubscribe}>
@@ -63,14 +63,14 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="footer-logo">
-              <span className="nav-logo-title serif" style={{ fontSize: 24, letterSpacing: '0.1em', color: '#F5F0E6' }}>STELLA O</span>
-              <span className="nav-logo-sub" style={{ fontSize: 8, letterSpacing: '0.35em', color: 'var(--gold)', fontWeight: 700 }}>AFRO SHOP</span>
+              <span className="nav-logo-title serif" style={{ fontSize: 24, letterSpacing: '0.1em', color: '#F5F0E6' }}>AFRIFOOD</span>
+              <span className="nav-logo-sub" style={{ fontSize: 8, letterSpacing: '0.35em', color: 'var(--gold)', fontWeight: 700 }}>BASKET</span>
             </div>
             <p className="footer-brand-desc">
-              Extending Stella's physical shop across distance. Pure local sourcing, hand-selected stock, and trusted diaspora shipping.
+              Extending authentic food supply chains across distance. Pure local sourcing, hand-selected stock, and trusted diaspora shipping.
             </p>
             <p className="footer-brand-motto serif" style={{ color: 'var(--gold)', fontStyle: 'italic', fontSize: 15, marginTop: 12 }}>
-              "Stella's personal touch, anywhere in the world."
+              "Authentic Afro food, anywhere in the world."
             </p>
 
             {/* Social SVGs */}
@@ -108,6 +108,8 @@ export default function Footer() {
             <button className="footer-link" onClick={() => setActiveView('faq')}>FAQ & Shipping</button>
             <button className="footer-link" onClick={() => setActiveView('contact')}>Contact & Kitchens</button>
             <button className="footer-link" onClick={() => setIsCorporateOpen(true)}>Corporate Quotes</button>
+            <button className="footer-link" onClick={() => setActiveView('privacy')}>Privacy Policy</button>
+            <button className="footer-link" onClick={() => setActiveView('terms')}>Terms of Service</button>
           </div>
 
           {/* Contact */}
@@ -145,10 +147,10 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
           <p style={{ fontSize: 11, color: 'rgba(245,240,230,0.4)' }}>
-            © {new Date().getFullYear()} Stella O Afro Shop. All rights reserved.
+            © {new Date().getFullYear()} AfriFood Basket. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
-            {['Paystack', 'Flutterwave', 'Bank Transfer', 'USSD'].map(p => (
+            {['PayPal', 'Bank Transfer'].map(p => (
               <span key={p} style={{ fontSize: 9, padding: '3px 8px', border: '1px solid rgba(245,240,230,0.12)', borderRadius: 3, color: 'rgba(245,240,230,0.35)', letterSpacing: '0.08em' }}>
                 {p}
               </span>

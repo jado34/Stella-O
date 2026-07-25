@@ -20,14 +20,14 @@ export default function StoryPage() {
       <div className="container">
         {/* Header */}
         <div className="story-header text-center">
-          <p className="story-eyebrow">STELLA’S PERSONAL TOUCH</p>
+          <p className="story-eyebrow">AFRIFOOD BASKET'S TOUCH</p>
           <div className="divider divider-center" />
           <h1 className="story-title serif">
             From Our Stall<br />
             <em>to Your Table.</em>
           </h1>
           <p className="story-intro">
-            A real Nigerian food shop run by Stella, extending a hand to busy Lagos professionals, household cooks, and diaspora kitchens.
+            A real Nigerian food shop run by AfriFood Basket, extending a hand to busy Lagos professionals, household cooks, and diaspora kitchens.
           </p>
         </div>
 
@@ -55,7 +55,7 @@ export default function StoryPage() {
         {/* CTA */}
         <div className="text-center" style={{ marginTop: 60 }}>
           <button className="btn-primary" onClick={() => setActiveView('shop')}>
-            ORDER FROM STELLA
+            ORDER NOW
           </button>
         </div>
       </div>

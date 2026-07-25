@@ -5,7 +5,8 @@ import { useShop } from '../context/ShopContext';
 export default function AccountDrawer() {
   const {
     isAccountOpen, setIsAccountOpen, convertPrice, addToCart,
-    ordersList, showToast, productsList, currentUser, setCurrentUser, users, setUsers
+    ordersList, showToast, productsList, currentUser, setCurrentUser, users, setUsers,
+    setActiveView
   } = useShop();
 
   const [tab, setTab] = useState('orders'); // 'orders', 'profile'
@@ -70,17 +71,23 @@ export default function AccountDrawer() {
     }
   }, [codeDigits, sentCode, users, emailInput, setCurrentUser, showToast, setIsAccountOpen]);
 
-  // Demo Login with Shop button
-  const handleContinueWithShop = () => {
-    const demoCode = '123456';
-    setEmailInput('a.ogunlesi@example.ng');
-    setSentCode(demoCode);
-    setAuthStep('entercode');
-    setCodeDigits(['', '', '', '', '', '']);
-    showToast(`Shop Demo: Enter verification code: ${demoCode}`);
-    setTimeout(() => {
-      document.getElementById('digit-0')?.focus();
-    }, 100);
+  // Demo Login with Google button
+  const handleContinueWithGoogle = () => {
+    const googleUser = {
+      email: 'a.ogunlesi@example.ng',
+      name: 'Adebayo Ogunlesi',
+      phone: '+234 803 123 4567',
+      address: 'Plot 14 Admiralty Way, Lekki Phase 1, Lagos',
+    };
+
+    const existing = users.find(u => u.email.toLowerCase() === googleUser.email.toLowerCase());
+    if (!existing) {
+      setUsers(prev => [...prev, googleUser]);
+    }
+
+    setCurrentUser(existing || googleUser);
+    showToast(`Signed in successfully with Google!`);
+    setIsAccountOpen(false);
   };
 
   // Submit email for authentication
@@ -142,7 +149,7 @@ export default function AccountDrawer() {
   if (!isAccountOpen) return null;
 
   // Filter orders by current user
-  const userOrders = currentUser 
+  const userOrders = currentUser
     ? ordersList.filter(o => o.email.toLowerCase() === currentUser.email.toLowerCase())
     : [];
 
@@ -156,12 +163,12 @@ export default function AccountDrawer() {
     <>
       <div className="overlay" onClick={() => setIsAccountOpen(false)} style={{ zIndex: 300 }} />
       <div className="account-drawer anim-slide-right" style={{ zIndex: 301 }}>
-        
+
         {/* CLOSE BUTTON (Accessible in all steps) */}
-        <button 
-          className="cart-close-btn" 
-          onClick={() => setIsAccountOpen(false)} 
-          aria-label="Close" 
+        <button
+          className="cart-close-btn"
+          onClick={() => setIsAccountOpen(false)}
+          aria-label="Close"
           style={{ position: 'absolute', top: 20, right: 20, zIndex: 350 }}
         >
           <X size={18} />
@@ -170,11 +177,11 @@ export default function AccountDrawer() {
         {/* LOGGED OUT VIEW (AUTH FLOW) */}
         {!currentUser ? (
           <div className="auth-drawer-content">
-            
+
             {/* Centered Brand Logo */}
             <div className="auth-brand-logo text-center">
-              <span className="serif" style={{ fontSize: 24, letterSpacing: '0.12em', color: 'var(--charcoal-text)', fontWeight: 600 }}>STELLA O</span>
-              <span style={{ display: 'block', fontSize: 8, letterSpacing: '0.35em', color: 'var(--gold)', fontWeight: 700, marginTop: 3 }}>AFRO SHOP</span>
+              <span className="serif" style={{ fontSize: 24, letterSpacing: '0.12em', color: 'var(--charcoal-text)', fontWeight: 600 }}>AFRIFOOD</span>
+              <span style={{ display: 'block', fontSize: 8, letterSpacing: '0.35em', color: 'var(--gold)', fontWeight: 700, marginTop: 3 }}>BASKET</span>
             </div>
 
             {/* STEP 1: SIGN IN / INPUT EMAIL */}
@@ -185,8 +192,14 @@ export default function AccountDrawer() {
                   <p style={{ fontSize: 13, color: 'var(--text-muted)' }}>Sign in or create an account</p>
                 </div>
 
-                <button className="btn-shop-purple" onClick={handleContinueWithShop}>
-                  Continue with Shop
+                <button className="btn-google-auth" onClick={handleContinueWithGoogle}>
+                  <svg className="google-icon" viewBox="0 0 24 24" width="16" height="16" xmlns="http://www.w3.org/2000/svg" style={{ marginRight: 8 }}>
+                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05" />
+                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335" />
+                  </svg>
+                  Continue with Google
                 </button>
 
                 <div className="auth-divider">
@@ -222,7 +235,7 @@ export default function AccountDrawer() {
                 </form>
 
                 <p className="auth-terms text-center">
-                  By continuing, you agree to our <a href="#" onClick={(e) => e.preventDefault()}>Terms of service</a>
+                  By continuing, you agree to our <a href="#" onClick={(e) => { e.preventDefault(); setActiveView('terms'); setIsAccountOpen(false); }}>Terms of service</a>
                 </p>
               </div>
             )}
@@ -318,7 +331,7 @@ export default function AccountDrawer() {
 
             {/* Bottom Privacy Policy */}
             <div className="auth-footer text-center">
-              <a href="#" className="auth-footer-link" onClick={(e) => e.preventDefault()}>Privacy policy</a>
+              <a href="#" className="auth-footer-link" onClick={(e) => { e.preventDefault(); setActiveView('privacy'); setIsAccountOpen(false); }}>Privacy policy</a>
             </div>
 
           </div>
@@ -366,10 +379,10 @@ export default function AccountDrawer() {
                     </p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                       {[
-                        { id: 1, name: 'Ijebu Garri (White)', sku: 'FLR-GARW-1KG', label: '1kg' },
-                        { id: 8, name: 'Pure Virgin Palm Oil', sku: 'OIL-PLM-1L', label: '1L' },
-                        { id: 7, name: 'Honey Beans (Oloyin)', sku: 'BEN-OLO-1KG', label: '1kg' },
-                        { id: 13, name: 'Norwegian Stockfish', sku: 'FSH-STK-3PC', label: '3 Cuts' },
+                        { id: 7, name: 'Ijebu Garri (White)', sku: 'FLR-GARW-1KG', label: '1kg' },
+                        { id: 21, name: 'Red Palm Oil', sku: 'OIL-PLM-1L', label: '1L' },
+                        { id: 18, name: 'Honey Beans (Oloyin)', sku: 'BEN-OLO-1KG', label: '1kg' },
+                        { id: 53, name: 'Stockfish', sku: 'FSH-STK-3PC', label: '3 Cuts' },
                       ].map(staple => {
                         const fullProd = productsList.find(p => p.id === staple.id);
                         const variant = fullProd?.variants.find(v => v.sku === staple.sku);
@@ -466,14 +479,14 @@ export default function AccountDrawer() {
                   </div>
 
                   {/* Sign Out Button */}
-                  <button 
-                    className="btn-outline w-full" 
-                    onClick={handleLogout} 
-                    style={{ 
-                      borderColor: 'var(--red-alert)', 
-                      color: 'var(--red-alert)', 
-                      fontSize: 11, 
-                      padding: '12px', 
+                  <button
+                    className="btn-outline w-full"
+                    onClick={handleLogout}
+                    style={{
+                      borderColor: 'var(--red-alert)',
+                      color: 'var(--red-alert)',
+                      fontSize: 11,
+                      padding: '12px',
                       justifyContent: 'center',
                       background: 'rgba(211, 47, 47, 0.04)'
                     }}
@@ -517,23 +530,28 @@ export default function AccountDrawer() {
         .auth-header {
           margin-bottom: 24px;
         }
-        .btn-shop-purple {
-          background: #5C3FFC;
-          color: #FFFFFF;
+        .btn-google-auth {
+          background: #FFFFFF;
+          color: var(--charcoal-text);
+          border: 1px solid var(--border);
           border-radius: 28px;
           padding: 14px 24px;
           font-size: 13px;
           font-weight: 600;
           width: 100%;
           text-align: center;
-          border: none;
           cursor: pointer;
           transition: background-color 0.2s;
           margin-bottom: 20px;
-          display: block;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          box-shadow: var(--shadow-sm);
         }
-        .btn-shop-purple:hover {
-          background: #4B32D6;
+        .btn-google-auth:hover {
+          background: #F9F9F9;
+          border-color: rgba(30, 23, 18, 0.2);
         }
         .auth-divider {
           display: flex;

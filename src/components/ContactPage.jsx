@@ -4,7 +4,7 @@ import { useShop } from '../context/ShopContext';
 import WhatsAppIcon from './WhatsAppIcon';
 
 export default function ContactPage() {
-  const { showToast, setIsCorporateOpen } = useShop();
+  const { showToast, setIsCorporateOpen, WHATSAPP_BUSINESS_NUMBER } = useShop();
   const [formSent, setFormSent] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', topic: 'General Inquiry', message: '' });
 
@@ -37,8 +37,8 @@ export default function ContactPage() {
               <div>
                 <strong>WhatsApp Concierge Desk</strong>
                 <p style={{ color: 'var(--text-muted)', fontSize: 13 }}>Instant response for live order updates</p>
-                <a href="https://wa.me/234800746759" target="_blank" rel="noreferrer" style={{ color: 'var(--gold)', fontWeight: 600, fontSize: 13, marginTop: 4, display: 'inline-block' }}>
-                  Chat on WhatsApp (+234 800 746 759) →
+                <a href={`https://wa.me/${WHATSAPP_BUSINESS_NUMBER.replace(/[^0-9]/g, '')}`} target="_blank" rel="noreferrer" style={{ color: 'var(--gold)', fontWeight: 600, fontSize: 13, marginTop: 4, display: 'inline-block' }}>
+                  Chat on WhatsApp ({WHATSAPP_BUSINESS_NUMBER}) →
                 </a>
               </div>
             </div>

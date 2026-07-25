@@ -5,10 +5,10 @@ import { useShop } from '../context/ShopContext';
 const HERO_SLIDES = [
   {
     bg: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=1600&q=85',
-    tag: 'STELLA O AFRO SHOP',
+    tag: 'AFRIFOOD BASKET',
     titleLine1: 'Extending Our Hand',
     titleLine2: 'Across Distance.',
-    sub: 'Stella O Afro Shop bridges authentic food sourcing with modern kitchens in Lagos, Abuja, and the diaspora.',
+    sub: 'AfriFood Basket bridges authentic food sourcing with modern kitchens in Lagos, Abuja, and the diaspora.',
     cta: 'SHOP OUR FOOD STALL',
     category: 'all',
   },
