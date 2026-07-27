@@ -59,7 +59,7 @@ export const products = [
   },
   {
     id: 2,
-    name: 'Poundo Yam Flour',
+    name: 'Ayoola Poundo Yam',
     category: 'flours',
     storage: 'ambient',
     badge: 'Best Seller',
@@ -73,7 +73,7 @@ export const products = [
       { label: '5kg', price: 16500, sku: 'FLR-PND-5KG', stock: 25 },
     ],
     pairsWell: [41, 42, 53],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/poundo_yam.png',
   },
   {
     id: 3,
@@ -111,7 +111,7 @@ export const products = [
   },
   {
     id: 5,
-    name: 'Semovita',
+    name: 'Golden Penny Semovita',
     category: 'flours',
     storage: 'ambient',
     badge: 'Pantry Essential',
@@ -125,11 +125,11 @@ export const products = [
       { label: '5kg', price: 11000, sku: 'FLR-SMV-5KG', stock: 40 },
     ],
     pairsWell: [41, 53],
-    image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80',
+    image: '/golden_penny_semovita.jpg',
   },
   {
     id: 6,
-    name: 'Semolina Flour',
+    name: 'Mama Gold Semolina',
     category: 'flours',
     storage: 'ambient',
     badge: 'Versatile',
@@ -143,7 +143,7 @@ export const products = [
       { label: '5kg', price: 9800, sku: 'FLR-SML-5KG', stock: 30 },
     ],
     pairsWell: [41],
-    image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80',
+    image: '/mama_gold_semolina.png',
   },
   {
     id: 7,
@@ -161,7 +161,7 @@ export const products = [
       { label: '5kg', price: 11000, sku: 'FLR-GARW-5KG', stock: 45 },
     ],
     pairsWell: [18, 41, 88],
-    image: 'https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&q=80',
+    image: '/garri_ijebu.png',
   },
   {
     id: 8,
@@ -245,7 +245,7 @@ export const products = [
       { label: '500g', price: 2000, sku: 'FLR-TAP-500G', stock: 80 },
     ],
     pairsWell: [122],
-    image: 'https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&q=80',
+    image: '/tapioca.png',
   },
 
   // RICE & GRAINS
@@ -266,7 +266,7 @@ export const products = [
       { label: '10kg', price: 40000, sku: 'RIC-OFD-10KG', stock: 10 },
     ],
     pairsWell: [22, 80],
-    image: '/ofada_rice_leaf.png',
+    image: '/ofada_rice.png',
   },
   {
     id: 14,
@@ -282,7 +282,7 @@ export const products = [
       { label: '5kg', price: 12500, sku: 'RIC-MMP-5KG', stock: 90 },
     ],
     pairsWell: [80, 28],
-    image: 'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=600&q=80',
+    image: '/mamas_pride_rice.png',
   },
   {
     id: 15,
@@ -303,7 +303,7 @@ export const products = [
   },
   {
     id: 16,
-    name: 'Basmati Rice',
+    name: 'Golden Sella Basmati Rice',
     category: 'rice',
     storage: 'ambient',
     badge: 'Aromatic',
@@ -316,7 +316,7 @@ export const products = [
       { label: '5kg', price: 15000, sku: 'RIC-BSM-5KG', stock: 30 },
     ],
     pairsWell: [80],
-    image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&q=80',
+    image: '/basmati_rice.jpg',
   },
   {
     id: 17,
@@ -373,7 +373,7 @@ export const products = [
       { label: '5kg', price: 13500, sku: 'BEN-BRN-5KG', stock: 25 },
     ],
     pairsWell: [21, 1],
-    image: '/honey_beans.png',
+    image: '/brown_beans.jpg',
   },
   {
     id: 20,
@@ -533,7 +533,7 @@ export const products = [
       { label: '250g', price: 3200, sku: 'SPC-JLF-250G', stock: 70 },
     ],
     pairsWell: [13, 14, 15],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/jollof_rice_spice.png',
   },
   {
     id: 29,
@@ -550,7 +550,7 @@ export const products = [
       { label: '250g', price: 2000, sku: 'SPC-CRY-250G', stock: 120 },
     ],
     pairsWell: [30],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/curry_powder.jpg',
   },
   {
     id: 30,
@@ -567,7 +567,7 @@ export const products = [
       { label: '150g', price: 1800, sku: 'SPC-THY-150G', stock: 150 },
     ],
     pairsWell: [28, 29],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/thyme.png',
   },
   {
     id: 31,
@@ -751,7 +751,7 @@ export const products = [
       { label: '1kg Ground', price: 8500, sku: 'SOP-EGU-1KG', stock: 35 },
     ],
     pairsWell: [21, 31, 1],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/egusi.jpg',
   },
   {
     id: 42,
@@ -947,7 +947,7 @@ export const products = [
       { label: 'Cod Head (Big)', price: 9000, sku: 'FSH-STKH-LG', stock: 30 },
     ],
     pairsWell: [41, 42, 31],
-    image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&q=80',
+    image: '/stockfish.png',
   },
   {
     id: 54,
@@ -1028,7 +1028,7 @@ export const products = [
       { label: '500g', price: 5500, sku: 'FSH-SMK-500G', stock: 55 },
     ],
     pairsWell: [41, 47, 35],
-    image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&q=80',
+    image: '/smoked_fish.png',
   },
   {
     id: 59,
@@ -1162,7 +1162,7 @@ export const products = [
       { label: '1kg Jar', price: 3400, sku: 'BRK-CUS-VNL-1KG', stock: 100 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=600&q=80',
+    image: '/checkers_custard_vanilla.png',
   },
   {
     id: 67,
@@ -1242,7 +1242,7 @@ export const products = [
       { label: '600g', price: 2200, sku: 'BRK-GLD-600G', stock: 120 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=600&q=80',
+    image: '/golden_morn.png',
   },
   {
     id: 72,
@@ -1258,7 +1258,7 @@ export const products = [
       { label: '500g', price: 2800, sku: 'BRK-CRN-500G', stock: 100 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=600&q=80',
+    image: '/cornflakes.png',
   },
   {
     id: 73,
@@ -1341,7 +1341,7 @@ export const products = [
       { label: 'Box of 40 Packs', price: 14000, sku: 'NDL-IND-BOX', stock: 40 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1612927601601-6638404737ce?w=600&q=80',
+    image: '/indomie_noodles.png',
   },
   {
     id: 78,
