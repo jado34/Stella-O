@@ -17,7 +17,7 @@ const HERO_SLIDES = [
     tag: 'HAND-SELECTED INGREDIENTS',
     titleLine1: 'Sourced Personally,',
     titleLine2: 'Trusted Globally.',
-    sub: 'Every tuber of yam, bundle of Ugu, cut of stockfish, and bag of honey beans is personally inspected by Stella.',
+    sub: 'Every tuber of yam, bundle of Ugu, cut of stockfish, and bag of honey beans is personally inspected by the AfriFood Basket team.',
     cta: 'BROWSE PRODUCTS',
     category: 'all',
   },

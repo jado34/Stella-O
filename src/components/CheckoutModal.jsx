@@ -301,7 +301,7 @@ export default function CheckoutModal() {
                 <div className="pay-methods">
                   {[
                     { id: 'paypal_whatsapp', icon: Wallet, label: 'PayPal & WhatsApp Checkout', sub: `Send PayPal payment to ${PAYPAL_EMAIL}, then confirm and send order details on WhatsApp` },
-                    { id: 'bank', icon: Building2, label: 'Direct Bank Transfer via WhatsApp', sub: 'Send order details to Stella on WhatsApp to pay via bank transfer (recommended for trust)' },
+                    { id: 'bank', icon: Building2, label: 'Direct Bank Transfer via WhatsApp', sub: 'Send order details to us on WhatsApp to pay via bank transfer (recommended for trust)' },
                   ].map(m => (
                     <button
                       key={m.id}
@@ -376,10 +376,10 @@ export default function CheckoutModal() {
 
                 {payMethod === 'bank' && (
                   <div className="bank-details" style={{ marginTop: 16, padding: 16, borderRadius: 6, border: '1px solid var(--border)', background: 'var(--cream-bg)' }}>
-                    <p style={{ fontSize: 10, color: 'var(--gold)', fontWeight: 700, marginBottom: 8, letterSpacing: '0.1em' }}>DIRECT BANK TRANSFER (STELLA O AFRO SHOP)</p>
+                    <p style={{ fontSize: 10, color: 'var(--gold)', fontWeight: 700, marginBottom: 8, letterSpacing: '0.1em' }}>DIRECT BANK TRANSFER (AFRIFOOD BASKET)</p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 6, fontSize: 12 }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: 'var(--text-muted)' }}>Bank Name:</span><strong style={{ color: 'var(--charcoal-text)' }}>Guaranty Trust Bank (GTBank)</strong></div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: 'var(--text-muted)' }}>Account Name:</span><strong style={{ color: 'var(--charcoal-text)' }}>Stella O Afro Shop</strong></div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: 'var(--text-muted)' }}>Account Name:</span><strong style={{ color: 'var(--charcoal-text)' }}>AfriFood Basket</strong></div>
                       <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ color: 'var(--text-muted)' }}>Account Number:</span><strong style={{ color: 'var(--gold)' }}>012-3456-789</strong></div>
                       <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border)', paddingTop: 6, marginTop: 4 }}>
                         <span style={{ color: 'var(--text-muted)' }}>Please send receipt to WhatsApp:</span>

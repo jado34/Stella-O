@@ -48,7 +48,7 @@ export default function CorporateQuoteModal() {
               Wholesale & Bulk Ordering<br />for Events, Churches & Kitchens
             </h2>
             <p style={{ fontSize: 13, color: 'var(--text-muted)', marginBottom: 20, lineHeight: 1.6 }}>
-              Stella O Afro Shop regularly supplies event planners, catering kitchens, and religious organizations. Request a bulk quote for bags of Rice, Beans, or Yams below.
+              AfriFood Basket regularly supplies event planners, catering kitchens, and religious organizations. Request a bulk quote for bags of Rice, Beans, or Yams below.
             </p>
 
             {/* Wholesale Info Box */}
@@ -153,9 +153,9 @@ export default function CorporateQuoteModal() {
         ) : (
           <div className="text-center anim-scale-in" style={{ padding: '16px 0' }}>
             <CheckCircle size={50} style={{ color: 'var(--gold)', margin: '0 auto 16px' }} />
-            <h2 className="serif" style={{ fontSize: 26, color: 'var(--charcoal-text)', marginBottom: 8 }}>Inquiry Sent to Stella!</h2>
+            <h2 className="serif" style={{ fontSize: 26, color: 'var(--charcoal-text)', marginBottom: 8 }}>Inquiry Sent!</h2>
             <p style={{ fontSize: 13, color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: 16 }}>
-              Thank you, <strong style={{ color: 'var(--charcoal-text)' }}>{submittedQuote.contactPerson}</strong>. Stella or her manager will review this wholesale request and call/message you directly on WhatsApp at <strong style={{ color: 'var(--gold)' }}>{submittedQuote.phone}</strong> with final delivery options.
+              Thank you, <strong style={{ color: 'var(--charcoal-text)' }}>{submittedQuote.contactPerson}</strong>. Our manager will review this wholesale request and call/message you directly on WhatsApp at <strong style={{ color: 'var(--gold)' }}>{submittedQuote.phone}</strong> with final delivery options.
             </p>
 
             <div className="invoice-preview-card" style={{ padding: 16, borderRadius: 4, border: '1px solid var(--border)', background: 'var(--cream-bg)', margin: '0 auto 20px', maxWidth: 440, textAlign: 'left' }}>

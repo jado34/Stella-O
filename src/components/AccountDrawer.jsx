@@ -131,7 +131,7 @@ export default function AccountDrawer() {
 
     setUsers(prev => [...prev, newUser]);
     setCurrentUser(newUser);
-    showToast(`Welcome to Stella O, ${regName}!`);
+    showToast(`Welcome to AfriFood Basket, ${regName}!`);
     setIsAccountOpen(false); // Close account drawer
   };
 
@@ -375,7 +375,7 @@ export default function AccountDrawer() {
                       RESTOCK CORE PANTRY BASKET
                     </p>
                     <p style={{ fontSize: 11, color: 'var(--text-muted)', marginBottom: 12 }}>
-                      Frequently bought together. Tap to add Stella's core staples instantly:
+                      Frequently bought together. Tap to add our core staples instantly:
                     </p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                       {[

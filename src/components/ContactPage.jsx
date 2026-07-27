@@ -11,7 +11,7 @@ export default function ContactPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormSent(true);
-    showToast('Your message has been sent to Stella’s customer desk!');
+    showToast('Your message has been sent to AfriFood Basket’s customer desk!');
   };
 
   return (
@@ -19,11 +19,11 @@ export default function ContactPage() {
       <div className="container">
         {/* Header */}
         <div className="text-center" style={{ marginBottom: 48 }}>
-          <p className="contact-eyebrow">STELLA’S KITCHENS & DISPATCH</p>
+          <p className="contact-eyebrow">AFRIFOOD BASKET KITCHENS & DISPATCH</p>
           <div className="divider divider-center" />
-          <h1 className="contact-title serif">Get in Touch with Stella</h1>
+          <h1 className="contact-title serif">Get in Touch with AfriFood Basket</h1>
           <p className="contact-intro">
-            Have a question about shipping to the diaspora, checkouts, or bulk orders? Stella or her manager will respond directly.
+            Have a question about shipping to the diaspora, checkouts, or bulk orders? Our team will respond directly.
           </p>
         </div>
 
@@ -70,14 +70,14 @@ export default function ContactPage() {
 
           {/* Form */}
           <div className="contact-form-card">
-            <h2 className="serif" style={{ fontSize: 28, color: 'var(--charcoal-text)', marginBottom: 20 }}>Send Stella a Message</h2>
+            <h2 className="serif" style={{ fontSize: 28, color: 'var(--charcoal-text)', marginBottom: 20 }}>Send Us a Message</h2>
 
             {formSent ? (
               <div className="sent-success-box text-center">
                 <CheckCircle size={40} style={{ color: '#2e7d32', margin: '0 auto 12px' }} />
                 <h3 className="serif" style={{ fontSize: 24, color: 'var(--charcoal-text)' }}>Message Received</h3>
                 <p style={{ fontSize: 13, color: 'var(--text-muted)', marginTop: 6 }}>
-                  Thank you, <strong>{formData.name}</strong>. Stella's dispatch manager will respond to {formData.email} within 2 hours.
+                  Thank you, <strong>{formData.name}</strong>. Our dispatch manager will respond to {formData.email} within 2 hours.
                 </p>
                 <button className="btn-outline" style={{ marginTop: 20, fontSize: 11 }} onClick={() => setFormSent(false)}>
                   SEND ANOTHER MESSAGE

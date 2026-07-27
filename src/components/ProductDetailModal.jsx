@@ -80,7 +80,7 @@ export default function ProductDetailModal() {
               </div>
               {product.freshnessNote && (
                 <div className="pdp-freshness-box">
-                  <strong>💡 Stella's Handling Note: </strong>
+                  <strong>💡 AfriFood Basket's Handling Note: </strong>
                   <span>{product.freshnessNote}</span>
                 </div>
               )}

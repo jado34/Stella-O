@@ -463,7 +463,7 @@ export const products = [
       { label: '1L', price: 9500, sku: 'OIL-COC-1L', stock: 30 },
     ],
     pairsWell: [12],
-    image: 'https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=600&q=80',
+    image: '/coconut_oil.png',
   },
 
   // SPICES & SEASONINGS

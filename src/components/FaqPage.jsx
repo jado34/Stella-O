@@ -26,8 +26,8 @@ const FAQ_CATEGORIES = [
     icon: ShieldCheck,
     questions: [
       {
-        q: 'Are the products really hand-selected by Stella?',
-        a: 'Yes. Stella has spent over twenty years building relationships with local farmers in Ogun, Ekiti, Kano, and Benue. She inspects the quality of every single batch of honey beans, Ofada rice, yam tubers, and stockfish before they are packaged.',
+        q: 'Are the products really hand-selected?',
+        a: 'Yes. AfriFood Basket has spent over twenty years building relationships with local farmers in Ogun, Ekiti, Kano, and Benue. We inspect the quality of every single batch of honey beans, Ofada rice, yam tubers, and stockfish before they are packaged.',
       },
       {
         q: 'How are perishable and frozen items packed?',
@@ -45,7 +45,7 @@ const FAQ_CATEGORIES = [
       },
       {
         q: 'Do you offer bulk supply for events, churches, or caterers?',
-        a: 'Yes. We frequently supply large events, churches, and caterers by the bag rather than the cup. You can submit a wholesale inquiry through the Bulk Supply form on our site, and Stella’s team will coordinate directly on WhatsApp.',
+        a: 'Yes. We frequently supply large events, churches, and caterers by the bag rather than the cup. You can submit a wholesale inquiry through the Bulk Supply form on our site, and AfriFood Basket’s team will coordinate directly on WhatsApp.',
       },
     ],
   },
@@ -65,7 +65,7 @@ export default function FaqPage() {
       <div className="container">
         {/* Header */}
         <div className="text-center" style={{ marginBottom: 48 }}>
-          <p className="faq-eyebrow">STELLA’S HELPDESK</p>
+          <p className="faq-eyebrow">AFRIFOOD BASKET HELPDESK</p>
           <div className="divider divider-center" />
           <h1 className="faq-title serif">Frequently Asked Questions</h1>
           <p className="faq-intro">

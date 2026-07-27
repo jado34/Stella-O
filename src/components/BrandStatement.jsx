@@ -66,7 +66,7 @@ export default function BrandStatement() {
             <em>Curated for Modern Kitchens.</em>
           </h2>
           <p className="brand-intro">
-            Stella O bridges authentic Nigerian farming cooperatives with discerning households. We make food ordering feel unhurried, trustworthy, and beautifully presented.
+            AfriFood Basket bridges authentic Nigerian farming cooperatives with discerning households. We make food ordering feel unhurried, trustworthy, and beautifully presented.
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export default function BrandStatement() {
           <div className="brand-quote-box text-center">
             <blockquote className="brand-quote serif">
               "I spent decades building my shop on trust and friendship. This website isn't about replacing my physical counter — it's about extending my hand to wherever you are, packing every bag of garri and bottle of palm oil with the very same care."
-              <cite style={{ display: 'block', fontSize: 13, color: 'var(--gold)', fontStyle: 'normal', fontWeight: 700, marginTop: 12 }}>— STELLA, OWNER</cite>
+              <cite style={{ display: 'block', fontSize: 13, color: 'var(--gold)', fontStyle: 'normal', fontWeight: 700, marginTop: 12 }}>— STELLA, FOUNDER</cite>
             </blockquote>
           </div>
         </div>
