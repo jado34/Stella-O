@@ -108,6 +108,18 @@ export function ShopProvider({ children }) {
       name: 'Adebayo Ogunlesi',
       phone: '+234 803 123 4567',
       address: 'Plot 14 Admiralty Way, Lekki Phase 1',
+    },
+    {
+      email: 'c.nze@example.ng',
+      name: 'Chioma Nze',
+      phone: '+234 809 987 6543',
+      address: '12 Joel Ogunnaike St, Ikeja GRA, Lagos',
+    },
+    {
+      email: 'b.sowore@example.ng',
+      name: 'Babajide Sowore',
+      phone: '+234 812 345 6789',
+      address: '45 Saka Tinubu St, Victoria Island, Lagos',
     }
   ]);
 

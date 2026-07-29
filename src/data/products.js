@@ -299,7 +299,7 @@ export const products = [
       { label: '10kg', price: 22000, sku: 'RIC-RST-10KG', stock: 40 },
     ],
     pairsWell: [80, 28],
-    image: 'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=600&q=80',
+    image: '/royal_stallion_rice.png',
   },
   {
     id: 16,
@@ -499,7 +499,7 @@ export const products = [
       { label: '250g', price: 4500, sku: 'SPC-BNG-250G', stock: 60 },
     ],
     pairsWell: [9, 52],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/banga_spice.png',
   },
   {
     id: 27,
@@ -584,7 +584,7 @@ export const products = [
       { label: '500g', price: 7500, sku: 'SPC-CRF-500G', stock: 60 },
     ],
     pairsWell: [41, 42, 21],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/ground_crayfish.png',
   },
   {
     id: 32,
@@ -601,7 +601,7 @@ export const products = [
       { label: '350g', price: 3200, sku: 'SPC-DPP-350G', stock: 90 },
     ],
     pairsWell: [25, 27],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/ground_dry_pepper.png',
   },
   {
     id: 33,
@@ -618,7 +618,7 @@ export const products = [
       { label: '250g', price: 4200, sku: 'SPC-CMP-250G', stock: 70 },
     ],
     pairsWell: [25, 31],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/cameroon_pepper.jpg',
   },
   {
     id: 34,
@@ -963,7 +963,7 @@ export const products = [
       { label: 'Whole Fish (Medium)', price: 4500, sku: 'FSH-CAT-MED', stock: 65 },
     ],
     pairsWell: [41, 47, 35],
-    image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&q=80',
+    image: '/dry_catfish.png',
   },
   {
     id: 55,
@@ -1061,7 +1061,7 @@ export const products = [
       { label: '200g Ground', price: 3500, sku: 'FSH-CRG-200G', stock: 80 },
     ],
     pairsWell: [41, 42, 47],
-    image: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=600&q=80',
+    image: '/crayfish_whole_ground.png',
   },
   {
     id: 61,
@@ -1112,7 +1112,7 @@ export const products = [
       { label: '500g', price: 8500, sku: 'MET-SGM-500G', stock: 35 },
     ],
     pairsWell: [25, 32, 35],
-    image: 'https://images.unsplash.com/photo-1603048588665-791ca8aea617?w=600&q=80',
+    image: '/smoked_goat_meat.png',
   },
   {
     id: 64,
@@ -1128,7 +1128,7 @@ export const products = [
       { label: '1kg Cuts', price: 12000, sku: 'MET-SMT-1KG', stock: 25 },
     ],
     pairsWell: [25, 27],
-    image: 'https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=600&q=80',
+    image: '/smoked_turkey.png',
   },
   {
     id: 65,
@@ -1144,7 +1144,7 @@ export const products = [
       { label: '250g', price: 6500, sku: 'MET-DRB-250G', stock: 45 },
     ],
     pairsWell: [27, 32],
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80',
+    image: '/dried_beef_tashi.png',
   },
 
   // BREAKFAST & PANTRY
@@ -1392,7 +1392,7 @@ export const products = [
       { label: '400g Tin', price: 1500, sku: 'CND-GNT-400G', stock: 200 },
     ],
     pairsWell: [13, 14],
-    image: 'https://images.unsplash.com/photo-1595855759920-86582396756a?w=600&q=80',
+    image: '/gino_tomato_paste.png',
   },
   {
     id: 81,
@@ -1408,7 +1408,7 @@ export const products = [
       { label: '400g Tin', price: 1400, sku: 'CND-TTM-400G', stock: 180 },
     ],
     pairsWell: [13, 14],
-    image: 'https://images.unsplash.com/photo-1595855759920-86582396756a?w=600&q=80',
+    image: '/tasty_tom_tomato.png',
   },
   {
     id: 82,
@@ -1424,7 +1424,7 @@ export const products = [
       { label: '400g Tin', price: 1500, sku: 'CND-TRM-400G', stock: 150 },
     ],
     pairsWell: [13, 14],
-    image: 'https://images.unsplash.com/photo-1595855759920-86582396756a?w=600&q=80',
+    image: '/terra_tomato_mix.png',
   },
   {
     id: 83,
@@ -1440,7 +1440,7 @@ export const products = [
       { label: '125g Tin', price: 1200, sku: 'CND-SRD-125G', stock: 200 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&q=80',
+    image: '/sardines_tomato_sauce.png',
   },
   {
     id: 84,
@@ -1506,7 +1506,7 @@ export const products = [
       { label: '200g', price: 2200, sku: 'SNK-PTC-200G', stock: 120 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1566393028639-d108a42c46a7?w=600&q=80',
+    image: '/plantain_chips.jpg',
   },
   {
     id: 88,

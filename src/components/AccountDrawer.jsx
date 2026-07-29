@@ -24,6 +24,13 @@ export default function AccountDrawer() {
   const [regPhone, setRegPhone] = useState('');
   const [regAddress, setRegAddress] = useState('');
 
+  // Google Chooser states
+  const [googleFlowStep, setGoogleFlowStep] = useState('list'); // 'list', 'add-custom'
+  const [customGoogleEmail, setCustomGoogleEmail] = useState('');
+  const [customGoogleName, setCustomGoogleName] = useState('');
+  const [customGooglePhone, setCustomGooglePhone] = useState('');
+  const [customGoogleAddress, setCustomGoogleAddress] = useState('');
+
   // Handle auto-focus and input shifts in digit boxes
   const handleDigitChange = (val, idx) => {
     if (!/^\d*$/.test(val)) return; // digit only
@@ -73,21 +80,37 @@ export default function AccountDrawer() {
 
   // Demo Login with Google button
   const handleContinueWithGoogle = () => {
-    const googleUser = {
-      email: 'a.ogunlesi@example.ng',
-      name: 'Adebayo Ogunlesi',
-      phone: '+234 803 123 4567',
-      address: 'Plot 14 Admiralty Way, Lekki Phase 1, Lagos',
-    };
+    setAuthStep('google-chooser');
+    setGoogleFlowStep('list');
+    setCustomGoogleEmail('');
+    setCustomGoogleName('');
+    setCustomGooglePhone('');
+    setCustomGoogleAddress('');
+  };
 
+  const handleSelectGoogleUser = (googleUser) => {
     const existing = users.find(u => u.email.toLowerCase() === googleUser.email.toLowerCase());
     if (!existing) {
       setUsers(prev => [...prev, googleUser]);
     }
-
     setCurrentUser(existing || googleUser);
     showToast(`Signed in successfully with Google!`);
     setIsAccountOpen(false);
+  };
+
+  const handleCustomGoogleSubmit = (e) => {
+    e.preventDefault();
+    if (!customGoogleEmail.trim() || !customGoogleName.trim()) {
+      showToast("Please enter at least a name and email.");
+      return;
+    }
+    const googleUser = {
+      email: customGoogleEmail.trim().toLowerCase(),
+      name: customGoogleName.trim(),
+      phone: customGooglePhone.trim() || '+234 800 000 0000',
+      address: customGoogleAddress.trim() || 'No address provided',
+    };
+    handleSelectGoogleUser(googleUser);
   };
 
   // Submit email for authentication
@@ -237,6 +260,257 @@ export default function AccountDrawer() {
                 <p className="auth-terms text-center">
                   By continuing, you agree to our <a href="#" onClick={(e) => { e.preventDefault(); setActiveView('terms'); setIsAccountOpen(false); }}>Terms of service</a>
                 </p>
+              </div>
+            )}
+
+            {/* GOOGLE ACCOUNT CHOOSER */}
+            {authStep === 'google-chooser' && (
+              <div className="google-chooser-container anim-slide-up" style={{ width: '100%' }}>
+                {googleFlowStep === 'list' && (
+                  <div className="google-chooser-list-view">
+                    <div className="google-chooser-header text-center" style={{ marginBottom: 24 }}>
+                      <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" style={{ margin: '0 auto 12px', display: 'block' }}>
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05" />
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335" />
+                      </svg>
+                      <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: 20, fontWeight: 500, color: '#202124', margin: '8px 0 4px' }}>Choose an account</h3>
+                      <p style={{ fontSize: 13, color: '#5f6368' }}>to continue to <strong style={{ color: 'var(--charcoal-text)' }}>AfriFood Basket</strong></p>
+                    </div>
+
+                    <div className="google-accounts-list" style={{ border: '1px solid #dadce0', borderRadius: 8, overflow: 'hidden', background: '#FFFFFF', marginBottom: 16 }}>
+                      {users.map((u, idx) => {
+                        const colors = ['#4285F4', '#34A853', '#EA4335', '#FBBC05'];
+                        const avatarBg = colors[idx % colors.length];
+                        return (
+                          <button
+                            key={u.email}
+                            className="google-account-item-btn"
+                            onClick={() => handleSelectGoogleUser(u)}
+                            style={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              width: '100%',
+                              padding: '12px 16px',
+                              border: 'none',
+                              borderBottom: idx < users.length - 1 ? '1px solid #dadce0' : 'none',
+                              background: 'none',
+                              cursor: 'pointer',
+                              textAlign: 'left',
+                              transition: 'background-color 0.15s'
+                            }}
+                          >
+                            <div className="google-avatar" style={{
+                              width: 32,
+                              height: 32,
+                              borderRadius: '50%',
+                              backgroundColor: avatarBg,
+                              color: '#FFFFFF',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              fontWeight: 600,
+                              fontSize: 14,
+                              marginRight: 12
+                            }}>
+                              {u.name.charAt(0).toUpperCase()}
+                            </div>
+                            <div style={{ flex: 1 }}>
+                              <p style={{ fontSize: 13, fontWeight: 600, color: '#3c4043', margin: 0 }}>{u.name}</p>
+                              <p style={{ fontSize: 11, color: '#5f6368', margin: 0 }}>{u.email}</p>
+                            </div>
+                          </button>
+                        );
+                      })}
+                      
+                      {/* Use another account button */}
+                      <button
+                        className="google-account-item-btn"
+                        onClick={() => setGoogleFlowStep('add-custom')}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          width: '100%',
+                          padding: '12px 16px',
+                          border: 'none',
+                          borderTop: '1px solid #dadce0',
+                          background: 'none',
+                          cursor: 'pointer',
+                          textAlign: 'left',
+                          transition: 'background-color 0.15s'
+                        }}
+                      >
+                        <div className="google-avatar-plus" style={{
+                          width: 32,
+                          height: 32,
+                          borderRadius: '50%',
+                          border: '1px solid #dadce0',
+                          color: '#5f6368',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontWeight: 500,
+                          fontSize: 18,
+                          marginRight: 12,
+                          background: '#f8f9fa'
+                        }}>
+                          +
+                        </div>
+                        <div style={{ flex: 1 }}>
+                          <p style={{ fontSize: 13, fontWeight: 500, color: '#1a73e8', margin: 0 }}>Use another account</p>
+                        </div>
+                      </button>
+                    </div>
+
+                    <p style={{ fontSize: 11, color: '#5f6368', lineHeight: 1.5, marginBottom: 24 }} className="text-center">
+                      To continue, Google will share your name, email address, language preference, and profile picture with AfriFood Basket.
+                    </p>
+
+                    <button
+                      type="button"
+                      className="google-btn-secondary"
+                      onClick={() => setAuthStep('signin')}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '100%',
+                        height: '44px',
+                        padding: '0 24px',
+                        border: '1px solid #dadce0',
+                        borderRadius: '22px',
+                        backgroundColor: '#FFFFFF',
+                        color: '#1a73e8',
+                        fontSize: '14px',
+                        fontWeight: '500',
+                        cursor: 'pointer',
+                        boxShadow: '0 1px 2px rgba(60,64,67,0.08)',
+                        transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                        marginTop: '16px'
+                      }}
+                    >
+                      Back to sign in
+                    </button>
+                  </div>
+                )}
+
+                {googleFlowStep === 'add-custom' && (
+                  <div className="google-chooser-add-view">
+                    <div className="google-chooser-header text-center" style={{ marginBottom: 20 }}>
+                      <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" style={{ margin: '0 auto 12px', display: 'block' }}>
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05" />
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335" />
+                      </svg>
+                      <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: 20, fontWeight: 500, color: '#202124', margin: '8px 0 4px' }}>Google Sign In</h3>
+                      <p style={{ fontSize: 13, color: '#5f6368' }}>Add your Google Account details</p>
+                    </div>
+
+                    <form onSubmit={handleCustomGoogleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                      <div>
+                        <label style={{ display: 'block', fontSize: 10, fontWeight: 600, color: '#5f6368', marginBottom: 4, letterSpacing: '0.05em' }}>EMAIL ADDRESS *</label>
+                        <input
+                          type="email"
+                          required
+                          className="input-field"
+                          placeholder="e.g. test@gmail.com"
+                          value={customGoogleEmail}
+                          onChange={(e) => setCustomGoogleEmail(e.target.value)}
+                          style={{ height: 40, border: '1px solid #dadce0', borderRadius: 4, width: '100%', padding: '0 12px', fontSize: 13, textTransform: 'none' }}
+                        />
+                      </div>
+
+                      <div>
+                        <label style={{ display: 'block', fontSize: 10, fontWeight: 600, color: '#5f6368', marginBottom: 4, letterSpacing: '0.05em' }}>FULL NAME *</label>
+                        <input
+                          type="text"
+                          required
+                          className="input-field"
+                          placeholder="e.g. John Doe"
+                          value={customGoogleName}
+                          onChange={(e) => setCustomGoogleName(e.target.value)}
+                          style={{ height: 40, border: '1px solid #dadce0', borderRadius: 4, width: '100%', padding: '0 12px', fontSize: 13 }}
+                        />
+                      </div>
+
+                      <div>
+                        <label style={{ display: 'block', fontSize: 10, fontWeight: 600, color: '#5f6368', marginBottom: 4, letterSpacing: '0.05em' }}>PHONE (OPTIONAL)</label>
+                        <input
+                          type="text"
+                          className="input-field"
+                          placeholder="e.g. +234 802 000 0000"
+                          value={customGooglePhone}
+                          onChange={(e) => setCustomGooglePhone(e.target.value)}
+                          style={{ height: 40, border: '1px solid #dadce0', borderRadius: 4, width: '100%', padding: '0 12px', fontSize: 13 }}
+                        />
+                      </div>
+
+                      <div>
+                        <label style={{ display: 'block', fontSize: 10, fontWeight: 600, color: '#5f6368', marginBottom: 4, letterSpacing: '0.05em' }}>DELIVERY ADDRESS (OPTIONAL)</label>
+                        <textarea
+                          className="input-field"
+                          rows={2}
+                          placeholder="e.g. 10 Marina Road, Lagos"
+                          value={customGoogleAddress}
+                          onChange={(e) => setCustomGoogleAddress(e.target.value)}
+                          style={{ padding: '8px 12px', border: '1px solid #dadce0', borderRadius: 4, width: '100%', resize: 'none', fontSize: 13 }}
+                        />
+                      </div>
+
+                      <button
+                        type="submit"
+                        className="google-btn-primary"
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          width: '100%',
+                          height: '44px',
+                          padding: '0 24px',
+                          border: 'none',
+                          borderRadius: '22px',
+                          backgroundColor: '#1a73e8',
+                          color: '#FFFFFF',
+                          fontSize: '14px',
+                          fontWeight: '500',
+                          cursor: 'pointer',
+                          boxShadow: '0 1px 3px rgba(26,115,232,0.3)',
+                          transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                          marginTop: '8px'
+                        }}
+                      >
+                        Sign in
+                      </button>
+
+                      <button
+                        type="button"
+                        className="google-btn-secondary"
+                        onClick={() => setGoogleFlowStep('list')}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          width: '100%',
+                          height: '44px',
+                          padding: '0 24px',
+                          border: '1px solid #dadce0',
+                          borderRadius: '22px',
+                          backgroundColor: '#FFFFFF',
+                          color: '#3c4043',
+                          fontSize: '14px',
+                          fontWeight: '500',
+                          cursor: 'pointer',
+                          boxShadow: '0 1px 2px rgba(60,64,67,0.08)',
+                          transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)'
+                        }}
+                      >
+                        Cancel
+                      </button>
+                    </form>
+                  </div>
+                )}
               </div>
             )}
 
@@ -717,6 +991,18 @@ export default function AccountDrawer() {
         .order-card-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
         .order-status-tag { font-size: 9px; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
         .order-items-preview { border-top: 1px solid var(--border); padding-top: 8px; }
+        .google-account-item-btn:hover {
+          background-color: #f8f9fa !important;
+        }
+        .google-btn-secondary:hover {
+          background-color: #f8f9fa !important;
+          border-color: #c6dafc !important;
+          box-shadow: 0 1px 3px rgba(60,64,67,0.15) !important;
+        }
+        .google-btn-primary:hover {
+          background-color: #1557b0 !important;
+          box-shadow: 0 2px 6px rgba(26,115,232,0.4) !important;
+        }
       `}</style>
     </>
   );
