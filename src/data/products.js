@@ -90,7 +90,7 @@ export const products = [
       { label: '2kg', price: 6800, sku: 'FLR-PLF-2KG', stock: 40 },
     ],
     pairsWell: [42, 21, 53],
-    image: 'https://images.unsplash.com/photo-1566393028639-d108a42c46a7?w=600&q=80',
+    image: '/plantain_fufu_flour.jpg',
   },
   {
     id: 4,
@@ -107,7 +107,7 @@ export const products = [
       { label: '2kg', price: 5400, sku: 'FLR-CSF-2KG', stock: 55 },
     ],
     pairsWell: [41, 21],
-    image: 'https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=600&q=80',
+    image: '/cassava_fufu_flour.jpg',
   },
   {
     id: 5,
@@ -390,7 +390,7 @@ export const products = [
       { label: '2kg', price: 6000, sku: 'BEN-BKE-2KG', stock: 45 },
     ],
     pairsWell: [23],
-    image: '/honey_beans.png',
+    image: '/black_eyed_beans.jpg',
   },
 
   // OILS & FATS
@@ -651,7 +651,7 @@ export const products = [
       { label: '250g', price: 3800, sku: 'SPC-IRU-250G', stock: 45 },
     ],
     pairsWell: [47, 41, 21],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/iru.png',
   },
   {
     id: 36,
@@ -667,7 +667,7 @@ export const products = [
       { label: '100g', price: 2200, sku: 'SPC-UZS-100G', stock: 60 },
     ],
     pairsWell: [37, 43],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/uziza_seeds.jpg',
   },
   {
     id: 37,
@@ -683,7 +683,7 @@ export const products = [
       { label: '50g', price: 1500, sku: 'SPC-UZL-50G', stock: 70 },
     ],
     pairsWell: [36, 43],
-    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80',
+    image: '/uziza_leaves.jpg',
   },
   {
     id: 38,
@@ -896,7 +896,7 @@ export const products = [
       { label: '200g', price: 2200, sku: 'SOP-DOK-200G', stock: 85 },
     ],
     pairsWell: [48, 31],
-    image: 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?w=600&q=80',
+    image: '/dry_okra.jpg',
   },
   {
     id: 51,
@@ -912,7 +912,7 @@ export const products = [
       { label: '150g', price: 2800, sku: 'SOP-OKP-150G', stock: 60 },
     ],
     pairsWell: [50, 31],
-    image: 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?w=600&q=80',
+    image: '/okra_powder.jpg',
   },
   {
     id: 52,
@@ -996,7 +996,7 @@ export const products = [
       { label: '1kg', price: 7500, sku: 'FSH-CRK-1KG', stock: 50 },
     ],
     pairsWell: [25, 32],
-    image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&q=80',
+    image: '/croaker_fish.jpg',
   },
   {
     id: 57,
@@ -1012,7 +1012,7 @@ export const products = [
       { label: 'Pack (250g)', price: 4000, sku: 'FSH-PNL-250G', stock: 60 },
     ],
     pairsWell: [41, 42],
-    image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&q=80',
+    image: '/panla_fish.jpg',
   },
   {
     id: 58,
@@ -1044,7 +1044,7 @@ export const products = [
       { label: '200g', price: 4000, sku: 'FSH-DRS-200G', stock: 80 },
     ],
     pairsWell: [31, 48, 41],
-    image: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=600&q=80',
+    image: '/dried_shrimps.jpg',
   },
   {
     id: 60,
@@ -1077,7 +1077,7 @@ export const products = [
       { label: '300g', price: 7500, sku: 'FSH-SMP-300G', stock: 35 },
     ],
     pairsWell: [45, 48],
-    image: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=600&q=80',
+    image: '/smoked_prawns.png',
   },
 
   // MEAT & POULTRY
@@ -1178,39 +1178,7 @@ export const products = [
       { label: '1kg Jar', price: 3400, sku: 'BRK-CUS-BNA-1KG', stock: 80 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=600&q=80',
-  },
-  {
-    id: 68,
-    name: 'Checkers Custard – Strawberry',
-    category: 'breakfast',
-    storage: 'ambient',
-    badge: 'Sweet Pick',
-    tags: [],
-    origin: 'Nigeria',
-    description: 'Strawberry-flavoured custard powder — a bright, berry-sweet morning alternative to the classic vanilla.',
-    freshnessNote: 'Keep closed. Store dry.',
-    variants: [
-      { label: '1kg Jar', price: 3400, sku: 'BRK-CUS-STR-1KG', stock: 80 },
-    ],
-    pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=600&q=80',
-  },
-  {
-    id: 69,
-    name: 'Checkers Custard – Honey',
-    category: 'breakfast',
-    storage: 'ambient',
-    badge: 'Natural Sweetness',
-    tags: [],
-    origin: 'Nigeria',
-    description: 'Honey-flavoured custard for a warm, natural sweetness in the morning. Perfect with warm milk.',
-    freshnessNote: 'Keep closed. Store dry.',
-    variants: [
-      { label: '1kg Jar', price: 3400, sku: 'BRK-CUS-HNY-1KG', stock: 75 },
-    ],
-    pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=600&q=80',
+    image: '/checkers_custard_banana.jpg',
   },
   {
     id: 70,
@@ -1226,7 +1194,7 @@ export const products = [
       { label: '1kg Jar', price: 3400, sku: 'BRK-CUS-CHC-1KG', stock: 75 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=600&q=80',
+    image: '/checkers_custard_chocolate.jpg',
   },
   {
     id: 71,
@@ -1274,7 +1242,7 @@ export const products = [
       { label: '400g Tin', price: 4500, sku: 'BRK-MLO-400G', stock: 150 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&q=80',
+    image: '/milo.jpg',
   },
   {
     id: 74,
@@ -1290,7 +1258,7 @@ export const products = [
       { label: '500g Jar', price: 4000, sku: 'BRK-BRN-500G', stock: 120 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&q=80',
+    image: '/bournvita.png',
   },
   {
     id: 75,
@@ -1306,7 +1274,7 @@ export const products = [
       { label: '200g Jar', price: 3800, sku: 'BRK-NCF-200G', stock: 100 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80',
+    image: '/nescafe_classic.png',
   },
   {
     id: 76,
@@ -1323,7 +1291,7 @@ export const products = [
       { label: '1kg', price: 4500, sku: 'BRK-OAT-1KG', stock: 80 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=600&q=80',
+    image: '/rolled_oats.png',
   },
 
   // NOODLES & PASTA
@@ -1456,7 +1424,7 @@ export const products = [
       { label: '200g Tin', price: 2800, sku: 'CND-CNB-200G', stock: 150 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80',
+    image: '/corned_beef.png',
   },
   {
     id: 85,
@@ -1472,7 +1440,7 @@ export const products = [
       { label: '400g Tin', price: 1800, sku: 'CND-BKB-400G', stock: 120 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=600&q=80',
+    image: '/baked_beans.png',
   },
 
   // SNACKS & BITES
@@ -1539,7 +1507,7 @@ export const products = [
       { label: '200g', price: 2000, sku: 'SNK-KLK-200G', stock: 80 },
     ],
     pairsWell: [27],
-    image: 'https://images.unsplash.com/photo-1569562211093-4ed0d0758f12?w=600&q=80',
+    image: '/kulikuli.jpg',
   },
   {
     id: 90,
@@ -1556,7 +1524,7 @@ export const products = [
       { label: '500g', price: 10000, sku: 'SNK-CSH-500G', stock: 35 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80',
+    image: '/cashew_nuts.png',
   },
   {
     id: 91,
@@ -1572,7 +1540,7 @@ export const products = [
       { label: '300g', price: 2500, sku: 'SNK-TGN-300G', stock: 100 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80',
+    image: '/tiger_nuts.jpg',
   },
 
   // BEVERAGES & TEAS
@@ -1623,7 +1591,7 @@ export const products = [
       { label: 'Box of 20 Bags', price: 2500, sku: 'BEV-HBT-20', stock: 100 },
     ],
     pairsWell: [92],
-    image: '/zobo_hibiscus_drink.png',
+    image: '/hibiscus_tea_bags.jpg',
   },
   {
     id: 95,
@@ -1657,7 +1625,7 @@ export const products = [
       { label: 'Pack of 24 Cans', price: 13500, sku: 'BEV-MLT-24PK', stock: 80 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600&q=80',
+    image: '/malt_drink.jpg',
   },
   {
     id: 97,
@@ -1691,7 +1659,7 @@ export const products = [
       { label: 'Pack of 24', price: 8500, sku: 'BEV-FNT-24PK', stock: 90 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600&q=80',
+    image: '/fanta_orange.jpg',
   },
   {
     id: 99,
@@ -1708,7 +1676,7 @@ export const products = [
       { label: 'Pack of 24', price: 8500, sku: 'BEV-SPR-24PK', stock: 90 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600&q=80',
+    image: '/sprite.jpg',
   },
 
   // FRESH PRODUCE
@@ -1759,7 +1727,7 @@ export const products = [
       { label: '1kg', price: 2500, sku: 'FRH-CCY-1KG', stock: 60 },
     ],
     pairsWell: [43, 44],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/cocoyam.png',
   },
   {
     id: 103,
@@ -1793,7 +1761,7 @@ export const products = [
       { label: '3kg', price: 8500, sku: 'FRH-TOM-3KG', stock: 40 },
     ],
     pairsWell: [80, 81, 32],
-    image: 'https://images.unsplash.com/photo-1595855759920-86582396756a?w=600&q=80',
+    image: '/tomatoes_plum.jpg',
   },
   {
     id: 105,
@@ -1842,7 +1810,7 @@ export const products = [
       { label: '5 Bulbs', price: 1500, sku: 'FRH-GRL-5', stock: 140 },
     ],
     pairsWell: [25, 27],
-    image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=600&q=80',
+    image: '/fresh_garlic.jpg',
   },
 
   // FROZEN PRODUCTS
@@ -1860,7 +1828,7 @@ export const products = [
       { label: '1kg', price: 9500, sku: 'FZN-GTM-1KG', stock: 55 },
     ],
     pairsWell: [25, 32],
-    image: 'https://images.unsplash.com/photo-1603048588665-791ca8aea617?w=600&q=80',
+    image: '/goat_meat_cuts.png',
   },
   {
     id: 109,
@@ -2055,7 +2023,7 @@ export const products = [
       { label: '100g', price: 600, sku: 'OTH-BKS-100G', stock: 200 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80',
+    image: '/baking_soda.jpg',
   },
   {
     id: 121,
@@ -2199,7 +2167,7 @@ export const products = [
       { label: '500g', price: 3500, sku: 'OTH-TGF-500G', stock: 60 },
     ],
     pairsWell: [91],
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80',
+    image: '/tigernut_flour.jpg',
   },
 ];
 
