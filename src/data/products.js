@@ -1575,7 +1575,7 @@ export const products = [
       { label: '250g', price: 3200, sku: 'BEV-GNG-250G', stock: 100 },
     ],
     pairsWell: [92],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/ginger_powder.jpg',
   },
   {
     id: 94,
@@ -1744,7 +1744,7 @@ export const products = [
       { label: '1kg Assorted', price: 5200, sku: 'FRH-PPR-1KG', stock: 40 },
     ],
     pairsWell: [80, 81],
-    image: 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=600&q=80',
+    image: '/fresh_peppers.jpg',
   },
   {
     id: 104,
@@ -1893,7 +1893,7 @@ export const products = [
       { label: '1kg', price: 8000, sku: 'FZN-CWL-1KG', stock: 35 },
     ],
     pairsWell: [25, 35],
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80',
+    image: '/cow_leg.png',
   },
   {
     id: 113,
@@ -1909,7 +1909,7 @@ export const products = [
       { label: '1kg', price: 7500, sku: 'FZN-CWT-1KG', stock: 30 },
     ],
     pairsWell: [25, 35],
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80',
+    image: '/cow_tail.png',
   },
   {
     id: 114,
@@ -1991,7 +1991,7 @@ export const products = [
       { label: 'Pack of 50 Cubes', price: 1200, sku: 'OTH-SCB-50', stock: 300 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/seasoning_cubes.jpg',
   },
   {
     id: 119,
@@ -2007,7 +2007,7 @@ export const products = [
       { label: '100g', price: 800, sku: 'OTH-BKP-100G', stock: 200 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80',
+    image: '/baking_powder.jpg',
   },
   {
     id: 120,
@@ -2103,7 +2103,7 @@ export const products = [
       { label: '500g', price: 2800, sku: 'OTH-BNF-500G', stock: 90 },
     ],
     pairsWell: [47, 1],
-    image: '/honey_beans.png',
+    image: '/beans_flour.png',
   },
   {
     id: 126,
