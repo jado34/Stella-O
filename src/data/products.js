@@ -634,7 +634,7 @@ export const products = [
       { label: 'Small Pack (50g)', price: 1200, sku: 'SPC-OGR-50G', stock: 40 },
     ],
     pairsWell: [41, 43],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/ogiri.png',
   },
   {
     id: 35,
@@ -700,7 +700,7 @@ export const products = [
       { label: '100g', price: 3200, sku: 'SPC-EHU-100G', stock: 50 },
     ],
     pairsWell: [25, 39],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/ehuru.jpg',
   },
   {
     id: 39,
@@ -716,7 +716,7 @@ export const products = [
       { label: '50g', price: 1500, sku: 'SPC-UDA-50G', stock: 90 },
     ],
     pairsWell: [25, 38],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/negro_pepper.png',
   },
   {
     id: 40,
@@ -732,7 +732,7 @@ export const products = [
       { label: '30g', price: 1200, sku: 'SPC-ATR-30G', stock: 60 },
     ],
     pairsWell: [39, 38],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
+    image: '/alligator_pepper.png',
   },
 
   // SOUP INGREDIENTS
@@ -768,7 +768,7 @@ export const products = [
       { label: '500g', price: 7200, sku: 'SOP-OGB-500G', stock: 50 },
     ],
     pairsWell: [21, 31, 2],
-    image: 'https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=600&q=80',
+    image: '/ogbono_seeds_ground.png',
   },
   {
     id: 43,
@@ -784,7 +784,7 @@ export const products = [
       { label: '100g', price: 2500, sku: 'SOP-OHA-100G', stock: 70 },
     ],
     pairsWell: [34, 37],
-    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80',
+    image: '/oha_leaves.png',
   },
   {
     id: 44,
@@ -800,7 +800,7 @@ export const products = [
       { label: '100g', price: 2000, sku: 'SOP-BTL-100G', stock: 80 },
     ],
     pairsWell: [41, 34],
-    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80',
+    image: '/bitter_leaves.png',
   },
   {
     id: 45,
@@ -880,7 +880,7 @@ export const products = [
       { label: '100g', price: 2500, sku: 'SOP-OKZ-100G', stock: 55 },
     ],
     pairsWell: [45, 48],
-    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80',
+    image: '/okazi_leaves.png',
   },
   {
     id: 50,
@@ -928,7 +928,7 @@ export const products = [
       { label: '400g Can', price: 4500, sku: 'SOP-BGP-400G', stock: 50 },
     ],
     pairsWell: [26, 22],
-    image: 'https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=600&q=80',
+    image: '/banga_paste.png',
   },
 
   // FISH & SEAFOOD
@@ -1608,7 +1608,7 @@ export const products = [
       { label: 'Box of 100 Bags', price: 3200, sku: 'BEV-LPT-100', stock: 120 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=600&q=80',
+    image: '/lipton_tea.png',
   },
   {
     id: 96,
@@ -1794,7 +1794,7 @@ export const products = [
       { label: '250g', price: 2000, sku: 'FRH-GNG-250G', stock: 120 },
     ],
     pairsWell: [92, 25],
-    image: 'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?w=600&q=80',
+    image: '/fresh_ginger_root.jpg',
   },
   {
     id: 107,
@@ -1861,7 +1861,7 @@ export const products = [
       { label: '1kg Cuts', price: 13000, sku: 'FZN-TRK-1KG', stock: 30 },
     ],
     pairsWell: [27, 28],
-    image: 'https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=600&q=80',
+    image: '/frozen_turkey.png',
   },
   {
     id: 111,
@@ -1877,7 +1877,7 @@ export const products = [
       { label: '500g (6–8 pieces)', price: 9000, sku: 'FZN-SNL-500G', stock: 25 },
     ],
     pairsWell: [25, 21, 32],
-    image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&q=80',
+    image: '/frozen_snails.png',
   },
   {
     id: 112,
@@ -1925,7 +1925,7 @@ export const products = [
       { label: '1kg Mix', price: 9000, sku: 'FZN-AST-1KG', stock: 40 },
     ],
     pairsWell: [41, 42, 21],
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80',
+    image: '/assorted_meat.png',
   },
   {
     id: 115,
@@ -1941,7 +1941,7 @@ export const products = [
       { label: '1kg (2–3 Fish)', price: 5500, sku: 'FZN-TLP-1KG', stock: 55 },
     ],
     pairsWell: [25, 32],
-    image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&q=80',
+    image: '/tilapia_fish.png',
   },
   {
     id: 116,
@@ -1973,7 +1973,7 @@ export const products = [
       { label: '1kg', price: 7000, sku: 'FZN-HKE-1KG', stock: 40 },
     ],
     pairsWell: [25, 80],
-    image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&q=80',
+    image: '/hake_fish.png',
   },
 
   // OTHERS
@@ -2151,7 +2151,7 @@ export const products = [
       { label: '200g', price: 2200, sku: 'OTH-DCN-200G', stock: 90 },
     ],
     pairsWell: [24],
-    image: 'https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=600&q=80',
+    image: '/dry_coconut.png',
   },
   {
     id: 129,
