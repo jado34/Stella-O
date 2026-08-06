@@ -816,7 +816,7 @@ export const products = [
       { label: '100g', price: 2800, sku: 'SOP-AFG-100G', stock: 60 },
     ],
     pairsWell: [41, 31],
-    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80',
+    image: '/afang_leaves.png',
   },
   {
     id: 46,
@@ -832,7 +832,7 @@ export const products = [
       { label: '100g', price: 2500, sku: 'SOP-EDT-100G', stock: 40 },
     ],
     pairsWell: [45],
-    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80',
+    image: '/editan_leaves.png',
   },
   {
     id: 47,
@@ -848,7 +848,7 @@ export const products = [
       { label: '100g', price: 1800, sku: 'SOP-EWD-100G', stock: 90 },
     ],
     pairsWell: [1, 35, 19],
-    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80',
+    image: '/ewedu_leaves.png',
   },
   {
     id: 48,
@@ -864,7 +864,7 @@ export const products = [
       { label: '100g', price: 2200, sku: 'SOP-UGU-100G', stock: 100 },
     ],
     pairsWell: [41, 45, 31],
-    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80',
+    image: '/ugu_leaves.jpg',
   },
   {
     id: 49,
@@ -2007,7 +2007,7 @@ export const products = [
       { label: '100g', price: 800, sku: 'OTH-BKP-100G', stock: 200 },
     ],
     pairsWell: [],
-    image: '/baking_powder.jpg',
+    image: '/baking_powder.png',
   },
   {
     id: 120,
@@ -2039,7 +2039,7 @@ export const products = [
       { label: '500g', price: 2000, sku: 'OTH-CSP-500G', stock: 130 },
     ],
     pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80',
+    image: '/custard_powder.png',
   },
   {
     id: 122,
@@ -2055,7 +2055,7 @@ export const products = [
       { label: '400ml Can', price: 2500, sku: 'OTH-CCM-400ML', stock: 100 },
     ],
     pairsWell: [12],
-    image: 'https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=600&q=80',
+    image: '/canned_coconut_milk.jpg',
   },
   {
     id: 123,
@@ -2073,22 +2073,7 @@ export const products = [
     pairsWell: [],
     image: 'https://images.unsplash.com/photo-1566393028639-d108a42c46a7?w=600&q=80',
   },
-  {
-    id: 124,
-    name: 'Yam Flour (Elubo / Amala)',
-    category: 'others',
-    storage: 'ambient',
-    badge: 'Swallow Base',
-    tags: ['gluten-free', 'vegan'],
-    origin: 'Nigeria',
-    description: 'Ground dried yam peels for making Amala swallow. Consistent dark-brown colour and smooth texture when prepared.',
-    freshnessNote: 'Keep sealed and dry.',
-    variants: [
-      { label: '1kg', price: 3200, sku: 'OTH-YMF-1KG', stock: 80 },
-    ],
-    pairsWell: [47, 35],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80',
-  },
+
   {
     id: 125,
     name: 'Beans Flour (Ewa / Gbegiri)',
@@ -2105,22 +2090,7 @@ export const products = [
     pairsWell: [47, 1],
     image: '/beans_flour.png',
   },
-  {
-    id: 126,
-    name: 'Corn Flour (Ogi / Akamu)',
-    category: 'others',
-    storage: 'ambient',
-    badge: 'Baby & Adult',
-    tags: ['vegan', 'gluten-free'],
-    origin: 'Nigeria',
-    description: "Fine, fermented corn flour for making Pap (Ogi/Akamu) — Nigeria's beloved breakfast porridge for both babies and adults.",
-    freshnessNote: 'Keep sealed and dry.',
-    variants: [
-      { label: '500g', price: 1800, sku: 'OTH-CRF-500G', stock: 140 },
-    ],
-    pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=600&q=80',
-  },
+
   {
     id: 127,
     name: 'Pap – Akamu / Ogi (Ready Mix)',
