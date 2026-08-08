@@ -149,13 +149,6 @@ export default function Footer() {
           <p style={{ fontSize: 11, color: 'rgba(245,240,230,0.4)' }}>
             © {new Date().getFullYear()} AfriFood Basket. All rights reserved.
           </p>
-          <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
-            {['PayPal', 'SEPA', 'Visa', 'Mastercard'].map(p => (
-              <span key={p} style={{ fontSize: 9, padding: '3px 8px', border: '1px solid rgba(245,240,230,0.12)', borderRadius: 3, color: 'rgba(245,240,230,0.35)', letterSpacing: '0.08em' }}>
-                {p}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
 
