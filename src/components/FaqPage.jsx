@@ -4,20 +4,16 @@ import { useShop } from '../context/ShopContext';
 
 const FAQ_CATEGORIES = [
   {
-    category: 'Delivery Zones & Times',
+    category: 'Delivery Across Germany',
     icon: Truck,
     questions: [
       {
-        q: 'What regions do you deliver to in Nigeria?',
-        a: 'We currently deliver doorstep packages across Lagos Island (Lekki, VI, Ikoyi, Chevron), Lagos Mainland (Ikeja, Surulere, Yaba, Gbagada), and Abuja FCT (Maitama, Wuse, Garki, Jabi). We validate your zone early in the checkout process.',
+        q: 'Which cities in Germany do you deliver to?',
+        a: 'We deliver to all cities across Germany via DHL Express, including Berlin, Hamburg, Munich, Frankfurt, Cologne, Stuttgart, Düsseldorf, Dortmund, Bremen, Leipzig, and everywhere in between. Simply enter your German postal code at checkout to confirm delivery availability.',
       },
       {
-        q: 'How does international shipping work for diaspora customers?',
-        a: 'We ship vacuum-sealed, customs-compliant dry food packages to the US, UK, and Canada. Standard shipping takes 5-7 working days to the UK, and 7-10 working days to the US and Canada. Shipping rates are calculated separately from local Nigerian deliveries.',
-      },
-      {
-        q: 'What are the delivery slots for Lagos and Abuja?',
-        a: 'Our delivery drivers run three daily dispatch windows: Morning Run (8am - 11am), Afternoon Dispatch (11am - 2pm), and Evening Deliveries (2pm - 5pm). You can schedule your slot up to 7 days in advance.',
+        q: 'How long does delivery take within Germany?',
+        a: 'Standard delivery via DHL takes 2–4 business days. Orders placed before 12:00 noon (CET) on weekdays are typically dispatched the same day.',
       },
     ],
   },
@@ -27,25 +23,29 @@ const FAQ_CATEGORIES = [
     questions: [
       {
         q: 'Are the products really hand-selected?',
-        a: 'Yes. AfriFood Basket has spent over twenty years building relationships with local farmers in Ogun, Ekiti, Kano, and Benue. We inspect the quality of every single batch of honey beans, Ofada rice, yam tubers, and stockfish before they are packaged.',
+        a: 'Yes. AfriFood Basket has spent over twenty years building relationships with local farmers in Ogun, Ekiti, Kano, and Benue. We inspect the quality of every single batch of honey beans, Ofada rice, yam tubers, and stockfish before they are vacuum-sealed and shipped to Germany.',
       },
       {
-        q: 'How are perishable and frozen items packed?',
-        a: 'Fresh produce like yams and plantains are packed in dry, airy boxes. Perishable or frozen goods (like frozen chicken, tilapia, and fresh cow skin/ponmo) are packed inside insulated bags filled with ice packs to guarantee they arrive cold.',
+        q: 'How are products packaged for Germany?',
+        a: 'All dry goods are vacuum-sealed and packaged in EU-compliant food-grade materials. Each product is clearly labelled with origin, shelf life, ingredients, and allergen information in accordance with EU food labelling regulations (EU No. 1169/2011).',
       },
     ],
   },
   {
-    category: 'Payments & Ordering Options',
+    category: 'Payments & Ordering',
     icon: RefreshCw,
     questions: [
       {
-        q: 'Which payment options do you support?',
-        a: 'For Nigerian customers, we default to Paystack and Flutterwave, supporting local credit/debit cards, direct bank transfer, and USSD. Diaspora customers can pay with international cards (Visa/Mastercard) and will see estimated currency rates based on our base NGN settlement.',
+        q: 'Which payment methods do you accept?',
+        a: 'We accept PayPal, SEPA bank transfer, and all major credit/debit cards (Visa, Mastercard). For Nigerian customers or NGN-based orders, we also support direct bank transfer with WhatsApp confirmation.',
       },
       {
-        q: 'Do you offer bulk supply for events, churches, or caterers?',
-        a: 'Yes. We frequently supply large events, churches, and caterers by the bag rather than the cup. You can submit a wholesale inquiry through the Bulk Supply form on our site, and AfriFood Basket’s team will coordinate directly on WhatsApp.',
+        q: 'What is your returns and refund policy?',
+        a: 'Under EU consumer law, you have the right to return most items within 14 days of receipt. Perishable food items may be excluded from this right. If you receive a damaged or incorrect item, please contact us within 48 hours and we will arrange a full replacement or refund at no cost to you.',
+      },
+      {
+        q: 'Do you offer bulk supply for events or restaurants?',
+        a: 'Yes. We frequently supply African restaurants, churches, event caterers, and community organizations across Germany with bulk quantities. Please submit a Corporate Quote request through our site and our team will respond within 24 hours.',
       },
     ],
   },
@@ -65,11 +65,11 @@ export default function FaqPage() {
       <div className="container">
         {/* Header */}
         <div className="text-center" style={{ marginBottom: 48 }}>
-          <p className="faq-eyebrow">AFRIFOOD BASKET HELPDESK</p>
+          <p className="faq-eyebrow">AFRIFOOD BASKET · HELPDESK</p>
           <div className="divider divider-center" />
           <h1 className="faq-title serif">Frequently Asked Questions</h1>
           <p className="faq-intro">
-            Everything you need to know about our scheduled local deliveries, diaspora express shipping, and wholesale ordering.
+            Everything you need to know about DHL delivery across Germany, EU food compliance, payment options, and bulk ordering.
           </p>
         </div>
 

@@ -42,7 +42,7 @@ export default function ProductCard({ product, index = 0 }) {
     >
       {/* 3:4 portrait image container — luxury editorial standard */}
       <div className="pc-img-wrap">
-        <img src={product.image} alt={product.name} loading="lazy" className="pc-img" />
+        <img src={product.image} alt={product.name} loading="lazy" decoding="async" className="pc-img" />
 
         {/* Rectangle Badge — top left */}
         {product.badge ? (

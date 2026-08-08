@@ -9,57 +9,85 @@ export default function PrivacyPage() {
       <div className="container">
         {/* Header */}
         <div style={{ marginBottom: 40 }}>
-          <p style={{ fontSize: 10, letterSpacing: '0.2em', color: 'var(--gold)', fontWeight: 700, textTransform: 'uppercase' }}>LEGAL PROTOCOLS</p>
+          <p style={{ fontSize: 10, letterSpacing: '0.2em', color: 'var(--gold)', fontWeight: 700, textTransform: 'uppercase' }}>PRIVACY POLICY · DATA PROTECTION</p>
           <h1 className="serif" style={{ fontSize: 44, color: 'var(--charcoal-text)', marginTop: 8 }}>Privacy Policy</h1>
           <div className="divider" />
-          <p style={{ fontSize: 13, color: 'var(--text-muted)' }}>Last updated: July 25, 2026</p>
+          <p style={{ fontSize: 13, color: 'var(--text-muted)' }}>Last updated: August 1, 2026 · AfriFood Basket</p>
         </div>
 
         {/* Content */}
         <div className="policy-content glass" style={{ padding: '40px 32px', borderRadius: 8 }}>
           <section className="policy-section">
-            <h2 className="serif">1. Information We Collect</h2>
+            <h2 className="serif">1. Data Controller</h2>
             <p>
-              We collect information to provide better services to all our users. This includes:
+              AfriFood Basket ("the Company", "we", "us") is a Nigerian-registered business currently operating in Germany. We are committed to protecting your personal data and handling it in accordance with the General Data Protection Regulation (GDPR), which applies to our operations as we serve customers residing in the European Union.
             </p>
+            <p>
+              Email: <strong>privacy@afrifoodbasket.de</strong>
+            </p>
+          </section>
+
+          <section className="policy-section">
+            <h2 className="serif">2. Information We Collect</h2>
+            <p>We collect the following categories of personal data:</p>
             <ul>
-              <li><strong>Account Credentials:</strong> Full Name, Email address, WhatsApp-ready phone number, and physical address provided during Google registration or verification checkout.</li>
-              <li><strong>Purchase Transactions:</strong> Order references, details of items purchased, shipping zone selections, and delivery slots. We do not store financial card details, as card payments are processed via third-party processors.</li>
-              <li><strong>Verification Records:</strong> Payment receipts or screenshots sent to our WhatsApp helpline to reconcile bank transfers or PayPal transfers manually.</li>
+              <li><strong>Identity Data:</strong> Full name, email address, phone number provided during registration or checkout.</li>
+              <li><strong>Contact & Delivery Data:</strong> Shipping address, German postal code, and delivery zone selections.</li>
+              <li><strong>Transaction Data:</strong> Order references, product selections, and payment method used. We do not store credit card numbers; payments are processed via third-party PCI-compliant processors.</li>
+              <li><strong>Communication Data:</strong> Messages sent via WhatsApp, email, or our contact form.</li>
             </ul>
           </section>
 
           <section className="policy-section">
-            <h2 className="serif">2. How We Use Information</h2>
-            <p>
-              We use the collected information for purposes including:
-            </p>
+            <h2 className="serif">3. Lawful Basis for Processing</h2>
+            <p>We process your personal data under the following lawful bases (Article 6 GDPR):</p>
             <ul>
-              <li>Processing and delivering your orders to domestic addresses or international diaspora dispatch points.</li>
-              <li>Sending order status notifications and updates via email, SMS, and WhatsApp.</li>
-              <li>Verifying payments, preventing transaction fraud, and protecting our store against user violations.</li>
-              <li>Improving our foodstuffs selection and customer service.</li>
+              <li><strong>Performance of a Contract:</strong> To process and deliver your orders.</li>
+              <li><strong>Legitimate Interests:</strong> To improve our services, prevent fraud, and send service notifications.</li>
+              <li><strong>Legal Obligation:</strong> To comply with applicable Nigerian business law, EU food labelling regulations, and data protection obligations under GDPR.</li>
+              <li><strong>Consent:</strong> For marketing communications (newsletter). You may withdraw consent at any time.</li>
             </ul>
-          </section>
-
-          <section className="policy-section">
-            <h2 className="serif">3. Data Security & Storage</h2>
-            <p>
-              AfriFood Basket takes commercial data protection seriously. We utilize industry-standard encryption protocols and secure database setups to protect your personal details. Access to your transaction data is restricted solely to verified kitchen dispatch managers.
-            </p>
           </section>
 
           <section className="policy-section">
             <h2 className="serif">4. Data Sharing & Third Parties</h2>
             <p>
-              We do not sell, rent, or trade your personal details with third-party advertising services. Personal data is only shared with dispatch riders, delivery zones coordinators, or legal advisors in direct connection to executing your orders or preventing fraudulent transactions.
+              We do not sell your personal data. We share data only with trusted processors including: DHL (delivery), PayPal / Stripe (payment processing), and our cloud infrastructure provider. All processors are bound by GDPR-compliant data processing agreements.
             </p>
           </section>
 
           <section className="policy-section">
-            <h2 className="serif">5. Contact Information</h2>
+            <h2 className="serif">5. Your Rights Under GDPR</h2>
+            <p>You have the following rights regarding your personal data:</p>
+            <ul>
+              <li><strong>Right of Access:</strong> Request a copy of the data we hold about you.</li>
+              <li><strong>Right to Rectification:</strong> Request correction of inaccurate data.</li>
+              <li><strong>Right to Erasure:</strong> Request deletion of your data ("right to be forgotten").</li>
+              <li><strong>Right to Restriction:</strong> Request we limit processing of your data.</li>
+              <li><strong>Right to Data Portability:</strong> Receive your data in a machine-readable format.</li>
+              <li><strong>Right to Object:</strong> Object to processing based on legitimate interests.</li>
+            </ul>
+            <p>To exercise any of these rights, contact: <strong>privacy@afrifoodbasket.de</strong></p>
+          </section>
+
+          <section className="policy-section">
+            <h2 className="serif">6. Data Retention</h2>
             <p>
-              If you have any questions about this Privacy Policy, please contact our privacy desk via our WhatsApp Helpline or at <strong>concierge@afrifoodbasket.com</strong>.
+              We retain personal data for as long as necessary to fulfil the purposes described in this policy, and in accordance with applicable legal and business record-keeping requirements (typically up to 7 years for transaction records).
+            </p>
+          </section>
+
+          <section className="policy-section">
+            <h2 className="serif">7. Right to Lodge a Complaint</h2>
+            <p>
+              If you are based in the EU and believe we have not handled your data correctly, you have the right to lodge a complaint with the relevant data protection supervisory authority in your country of residence. For Germany, this is the relevant state data protection authority (<em>Landesdatenschutzbehörde</em>).
+            </p>
+          </section>
+
+          <section className="policy-section">
+            <h2 className="serif">8. Contact</h2>
+            <p>
+              For any data protection enquiries, please contact us at <strong>privacy@afrifoodbasket.de</strong> or via WhatsApp at <strong>+49 157 3123 4567</strong>.
             </p>
           </section>
         </div>

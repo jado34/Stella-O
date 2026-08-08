@@ -4,7 +4,7 @@ import { useShop } from '../context/ShopContext';
 import WhatsAppIcon from './WhatsAppIcon';
 import { categories } from '../data/products';
 
-const CURRENCIES = ['NGN', 'USD', 'GBP', 'EUR'];
+const CURRENCIES = ['NGN', 'EUR', 'USD', 'GBP'];
 
 export default function Navbar() {
   const {
@@ -120,7 +120,7 @@ export default function Navbar() {
                     setSearchQuery(e.target.value);
                     if (activeView !== 'shop') setActiveView('shop');
                   }}
-                  placeholder="Search food items..."
+                  placeholder="Search African food..."
                   onBlur={() => { if (!searchQuery) setShowSearch(false); }}
                 />
                 {searchQuery && (
@@ -204,7 +204,7 @@ export default function Navbar() {
                   setSearchQuery(e.target.value);
                   if (activeView !== 'shop') setActiveView('shop');
                 }}
-                placeholder="Search food..."
+                placeholder="Search African food..."
               />
             </div>
 

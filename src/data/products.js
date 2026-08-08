@@ -33,8 +33,9 @@ export const currencySymbols = {
 };
 
 export const initialPromoCodes = [
-  { code: 'STELLA5', discountPercent: 5, minSpend: 15000, description: '5% off orders over ₦15,000' },
-  { code: 'OFADAFEAST', discountPercent: 10, minSpend: 30000, description: '10% off orders over ₦30,000' },
+  { code: 'GERMANY10', discountPercent: 10, minSpend: 15000, description: '10% off your first order' },
+  { code: 'AFRICA15', discountPercent: 15, minSpend: 30000, description: '15% off orders over ₦30,000' },
+  { code: 'STELLA5', discountPercent: 5, minSpend: 10000, description: '5% welcome discount' },
 ];
 
 export const products = [
@@ -77,7 +78,7 @@ export const products = [
   },
   {
     id: 3,
-    name: 'Plantain Fufu Flour',
+    name: 'Plantain Flour',
     category: 'flours',
     storage: 'ambient',
     badge: "Stella's Pick",
@@ -1491,7 +1492,7 @@ export const products = [
       { label: '500g', price: 2800, sku: 'SNK-GRN-500G', stock: 120 },
     ],
     pairsWell: [7],
-    image: 'https://images.unsplash.com/photo-1569562211093-4ed0d0758f12?w=600&q=80',
+    image: '/roasted_groundnut.jpg',
   },
   {
     id: 89,
@@ -2057,22 +2058,6 @@ export const products = [
     pairsWell: [12],
     image: '/canned_coconut_milk.jpg',
   },
-  {
-    id: 123,
-    name: 'Plantain Flour',
-    category: 'others',
-    storage: 'ambient',
-    badge: 'Healthy Bake',
-    tags: ['gluten-free', 'vegan'],
-    origin: 'Nigeria',
-    description: 'Unripe plantain dried and milled into a nutritious, gluten-free flour suitable for baking, porridge, and swallow.',
-    freshnessNote: 'Keep sealed in a cool dry place.',
-    variants: [
-      { label: '500g', price: 3000, sku: 'OTH-PLF-500G', stock: 70 },
-    ],
-    pairsWell: [],
-    image: 'https://images.unsplash.com/photo-1566393028639-d108a42c46a7?w=600&q=80',
-  },
 
   {
     id: 125,
@@ -2143,44 +2128,60 @@ export const products = [
 
 export const deliveryZones = [
   {
-    id: 'lagos-island',
-    name: 'Lagos Island (Lekki, VI, Ikoyi, Chevron)',
+    id: 'berlin',
+    name: 'Berlin (All Districts)',
+    baseFee: 490,
+    postcodes: ['10115', '10117', '10178', '10243', '10585', '10625', '10707', '12049', '13347'],
+    type: 'local',
+    eta: '2–3 business days via DHL',
+  },
+  {
+    id: 'hamburg',
+    name: 'Hamburg (All Districts)',
+    baseFee: 490,
+    postcodes: ['20095', '20097', '20099', '22041', '22083', '21073', '22761'],
+    type: 'local',
+    eta: '2–3 business days via DHL',
+  },
+  {
+    id: 'munich',
+    name: 'Munich (All Districts)',
+    baseFee: 490,
+    postcodes: ['80331', '80333', '80335', '80636', '81241', '81539', '81671'],
+    type: 'local',
+    eta: '2–3 business days via DHL',
+  },
+  {
+    id: 'frankfurt',
+    name: 'Frankfurt am Main',
+    baseFee: 490,
+    postcodes: ['60306', '60311', '60313', '60318', '60431', '60487', '60528'],
+    type: 'local',
+    eta: '2–3 business days via DHL',
+  },
+  {
+    id: 'cologne',
+    name: 'Cologne & Düsseldorf',
+    baseFee: 490,
+    postcodes: ['50667', '50668', '50670', '40210', '40212', '40215', '40217'],
+    type: 'local',
+    eta: '2–3 business days via DHL',
+  },
+  {
+    id: 'other-germany',
+    name: 'Rest of Germany (All States)',
+    baseFee: 490,
+    postcodes: ['All German Postal Codes'],
+    type: 'local',
+    eta: '3–4 business days via DHL Standard',
+  },
+  {
+    id: 'nigeria-lagos',
+    name: 'Nigeria – Lagos (Local Delivery)',
     baseFee: 2500,
-    postcodes: ['Lekki Phase 1', 'Lekki Phase 2', 'Victoria Island', 'Ikoyi', 'Chevron', 'Jakande', 'Sangotedo'],
+    postcodes: ['Lekki', 'Victoria Island', 'Ikoyi', 'Ikeja', 'Surulere'],
     type: 'local',
     eta: 'Same-day or Scheduled window',
-  },
-  {
-    id: 'lagos-mainland',
-    name: 'Lagos Mainland (Ikeja, Surulere, Gbagada)',
-    baseFee: 2000,
-    postcodes: ['Ikeja', 'Surulere', 'Yaba', 'Gbagada', 'Maryland', 'Magodo', 'Ketu', 'Festac'],
-    type: 'local',
-    eta: 'Same-day or Scheduled window',
-  },
-  {
-    id: 'abuja',
-    name: 'Abuja FCT (Maitama, Wuse, Garki, Jabi)',
-    baseFee: 4500,
-    postcodes: ['Maitama', 'Wuse 2', 'Garki', 'Jabi', 'Gwarinpa', 'Asokoro'],
-    type: 'local',
-    eta: 'Next-day delivery',
-  },
-  {
-    id: 'international-uk',
-    name: 'United Kingdom (Diaspora Shipping)',
-    baseFee: 22000,
-    postcodes: ['London', 'Birmingham', 'Manchester', 'Leeds', 'Scotland'],
-    type: 'international',
-    eta: '5 - 7 working days (Customs cleared, vacuum sealed)',
-  },
-  {
-    id: 'international-us-ca',
-    name: 'US & Canada (Diaspora Shipping)',
-    baseFee: 28000,
-    postcodes: ['Houston', 'New York', 'Maryland', 'Toronto', 'Calgary', 'Atlanta'],
-    type: 'international',
-    eta: '7 - 10 working days (USDA/CFIA compliant packing)',
   },
 ];
 
@@ -2190,9 +2191,9 @@ export function generateDeliverySlots() {
   for (let d = 1; d <= 7; d++) {
     const date = new Date(today);
     date.setDate(today.getDate() + d);
-    const dateStr = date.toLocaleDateString('en-NG', { weekday: 'short', day: 'numeric', month: 'short' });
-    ["08:00 – 11:00 (Stella's Morning Run)", '11:00 – 14:00 (Afternoon Dispatch)', '14:00 – 17:00 (Evening Deliveries)'].forEach((time, i) => {
-      const capacity = 15;
+    const dateStr = date.toLocaleDateString('en-DE', { weekday: 'short', day: 'numeric', month: 'short' });
+    ['DHL Standard (2-4 days)', 'DHL Express (1-2 days)', 'DHL Paket Next Day'].forEach((time, i) => {
+      const capacity = 20;
       const booked = Math.floor(Math.random() * 8);
       slots.push({
         id: `slot-${d}-${i}`,

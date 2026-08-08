@@ -19,11 +19,11 @@ export default function ContactPage() {
       <div className="container">
         {/* Header */}
         <div className="text-center" style={{ marginBottom: 48 }}>
-          <p className="contact-eyebrow">AFRIFOOD BASKET KITCHENS & DISPATCH</p>
+          <p className="contact-eyebrow">AFRIFOOD BASKET · GERMANY HEADQUARTERS</p>
           <div className="divider divider-center" />
-          <h1 className="contact-title serif">Get in Touch with AfriFood Basket</h1>
+          <h1 className="contact-title serif">Get in Touch with Us</h1>
           <p className="contact-intro">
-            Have a question about shipping to the diaspora, checkouts, or bulk orders? Our team will respond directly.
+            Have a question about delivery to your German city, bulk orders, or your account? Our team will respond within a few hours.
           </p>
         </div>
 
@@ -46,17 +46,17 @@ export default function ContactPage() {
             <div className="contact-detail-item">
               <MapPin size={20} style={{ color: 'var(--gold)', flexShrink: 0 }} />
               <div>
-                <strong>Lagos Physical Stall & Dispatch Hub</strong>
-                <p style={{ color: 'var(--text-muted)', fontSize: 13 }}>Plot 14 Admiralty Way, Lekki Phase 1, Victoria Island, Lagos State</p>
+                <strong>Germany Headquarters & Dispatch</strong>
+                <p style={{ color: 'var(--text-muted)', fontSize: 13 }}>Kurfürstendamm 50, 10709 Berlin, Germany</p>
               </div>
             </div>
 
             <div className="contact-detail-item">
               <Clock size={20} style={{ color: 'var(--gold)', flexShrink: 0 }} />
               <div>
-                <strong>Stall Hours</strong>
-                <p style={{ color: 'var(--text-muted)', fontSize: 13 }}>Monday – Saturday: 08:00 – 19:00 (WAT)</p>
-                <p style={{ color: 'var(--text-muted)', fontSize: 13 }}>Sunday Scheduled Deliveries: 10:00 – 16:00 (WAT)</p>
+                <strong>Office Hours (CET)</strong>
+                <p style={{ color: 'var(--text-muted)', fontSize: 13 }}>Monday – Friday: 09:00 – 18:00 (CET)</p>
+                <p style={{ color: 'var(--text-muted)', fontSize: 13 }}>Saturday: 10:00 – 15:00 (CET)</p>
               </div>
             </div>
 
@@ -129,9 +129,11 @@ export default function ContactPage() {
                     style={{ background: 'var(--cream-bg)' }}
                   >
                     <option value="General Inquiry">General Question</option>
-                    <option value="Diaspora Delivery">Diaspora Shipping Details</option>
+                    <option value="Germany Delivery">Delivery to My German City</option>
                     <option value="Bulk Order">Bulk Orders & Catering Support</option>
                     <option value="Payment Issue">Payment & Bank Reconciliation</option>
+                    <option value="EU Returns">EU Returns & Refund Policy</option>
+                    <option value="Wholesale">Wholesale & Reseller Inquiry</option>
                   </select>
                 </div>
 

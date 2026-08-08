@@ -4,12 +4,75 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AfriFood Basket — Authentically Nigerian Food, Delivered</title>
-    <meta name="description" content="Premium authentic Nigerian food — Garri, Ofada Rice, Palm Oil, Egusi, Smoked Fish, and more. Curated directly from Nigerian farms and artisans, delivered to your door across Lagos, Abuja, Port Harcourt and the UK." />
-    <meta property="og:title" content="AfriFood Basket" />
-    <meta property="og:description" content="The World is Yours | Premium Afro Food, Authentically Sourced." />
+
+    <!-- ── Primary SEO (base — SEOHead.jsx updates these dynamically per view) ── -->
+    <title>AfriFood Basket — Authentic Nigerian & African Food Delivered Across Germany</title>
+    <meta name="description" content="AfriFood Basket — Your trusted source for premium authentic Nigerian and West African food in Germany. Garri, Ofada Rice, Palm Oil, Egusi, Stockfish, Suya Spice and more, delivered to Berlin, Hamburg, Munich, Frankfurt, Cologne and beyond." />
+    <meta name="keywords" content="Nigerian food Germany, African food Germany, African grocery delivery Berlin, Nigerian groceries Hamburg, African food Munich, Egusi Germany, Stockfish Germany, Garri Germany, Ofada Rice Germany, Palm Oil Germany" />
+    <meta name="author" content="AfriFood Basket" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.afrifoodbasket.de/" />
+
+    <!-- ── Open Graph ─────────────────────────────── -->
+    <meta property="og:title" content="AfriFood Basket — Premium Afro Food Delivered" />
+    <meta property="og:description" content="Authentic Nigerian & West African groceries delivered anywhere in Germany. Curated directly from farms, vacuum-sealed and shipped via DHL." />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#111418" />
+    <meta property="og:url" content="https://www.afrifoodbasket.de/" />
+    <meta property="og:site_name" content="AfriFood Basket" />
+    <meta property="og:locale" content="en_DE" />
+
+    <!-- ── Twitter Card ───────────────────────────── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AfriFood Basket — Premium Afro Food Delivered" />
+    <meta name="twitter:description" content="Authentic Nigerian food delivered anywhere in Germany. DHL shipping." />
+
+    <meta name="theme-color" content="#18120D" />
+
+    <!-- ── Google Fonts (preconnected for maximum speed) ─── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700;800&display=swap" />
+
+    <!-- ── Base Organization JSON-LD (visible before JS runs) ── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AfriFood Basket",
+      "url": "https://www.afrifoodbasket.de",
+      "logo": "https://www.afrifoodbasket.de/favicon.svg",
+      "description": "AfriFood Basket is a Nigerian-registered business delivering authentic Nigerian and West African food to customers across Germany via DHL.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+4915731234567",
+        "contactType": "customer service",
+        "availableLanguage": "English"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Germany"
+      }
+    }
+    </script>
+
+    <!-- ── WebSite JSON-LD (enables Google Search sitelinks box) ── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "AfriFood Basket",
+      "url": "https://www.afrifoodbasket.de",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.afrifoodbasket.de/?search={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

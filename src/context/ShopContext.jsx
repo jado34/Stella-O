@@ -2,8 +2,8 @@ import React, { createContext, useContext, useState, useCallback } from 'react';
 import { exchangeRates, currencySymbols, generateDeliverySlots, products as initialProducts, deliveryZones, initialPromoCodes } from '../data/products';
 
 export const WHATSAPP_BUSINESS_NUMBER = '+4915731234567';
-export const PAYPAL_ME_LINK = 'https://paypal.me/afrifoodbasket';
-export const PAYPAL_EMAIL = 'payment@afrifoodbasket.com';
+export const PAYPAL_ME_LINK = 'https://paypal.me/afrifoodbasketgermany';
+export const PAYPAL_EMAIL = 'payment@afrifoodbasket.de';
 
 const ShopContext = createContext(null);
 
@@ -219,7 +219,7 @@ export function ShopProvider({ children }) {
 
       let message = '';
       if (paymentMethod === 'paypal_whatsapp') {
-        message = `🇳🇬 *AFRIFOOD BASKET - NEW ORDER (PAYPAL)*\n` +
+        message = `🇩🇪 *AFRIFOOD BASKET GERMANY - NEW ORDER (PAYPAL)*\n` +
           `${lineBreak}\n` +
           `*Order Reference:* ${orderId}\n` +
           `*Customer Name:* ${newOrder.customerName}\n` +
@@ -248,7 +248,7 @@ export function ShopProvider({ children }) {
           `[📎 ATTACH YOUR PAYMENT SCREENSHOT HERE]\n\n` +
           `Thank you!`;
       } else {
-        message = `🇳🇬 *AFRIFOOD BASKET - NEW ORDER*\n` +
+        message = `🇩🇪 *AFRIFOOD BASKET GERMANY - NEW ORDER*\n` +
           `${lineBreak}\n` +
           `*Order Reference:* ${orderId}\n` +
           `*Customer Name:* ${newOrder.customerName}\n` +

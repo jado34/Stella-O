@@ -3,12 +3,12 @@ import { useShop } from '../context/ShopContext';
 
 const STORY_SECTIONS = [
   {
-    title: 'The Physical Shop & Beyond',
-    body: "For years, Stella's small brick-and-mortar shop has been the heartbeat of the neighborhood. Customers knew that if they needed dry, sharp Ijebu Garri before the weekend, or special 'under-the-counter' Ogiri wrapped in leaves, Stella would have it set aside. Her business grew through word-of-mouth because she treated every customer like family. This website is simply an extension of her hand across distance, built for those who have moved away but still crave the authentic taste of home.",
+    title: 'From Lagos to Germany',
+    body: "For years, Stella's small brick-and-mortar shop was the heartbeat of the neighborhood. Customers knew that if they needed dry, sharp Ijebu Garri before the weekend, or special 'under-the-counter' Ogiri wrapped in leaves, Stella would have it set aside. Her business grew through word-of-mouth because she treated every customer like family. AfriFood Basket is simply an extension of her hand across distance, built for Nigerians and West Africans who have moved to Germany but still crave the authentic taste of home.",
   },
   {
     title: 'Honest, Non-Supermarket Sourcing',
-    body: "We do not buy from mass industrial packaging plants. Stella continues to maintain personal relationships with local farmers in Ogun, Ekiti, Kano, and Benue. The honey beans are hand-selected, Ofada rice is double-sieved to be completely stone-free, and palm oil is cold-pressed from Edo State mills. It is clean food, handled with the same care Stella has shown for over twenty years.",
+    body: "We do not buy from mass industrial packaging plants. Stella continues to maintain personal relationships with local farmers in Ogun, Ekiti, Kano, and Benue. The honey beans are hand-selected, Ofada rice is double-sieved to be completely stone-free, and palm oil is cold-pressed from Edo State mills. It is clean food, handled with the same care Stella has shown for over twenty years — now vacuum-sealed and shipped directly to Germany.",
   },
 ];
 
@@ -20,14 +20,14 @@ export default function StoryPage() {
       <div className="container">
         {/* Header */}
         <div className="story-header text-center">
-          <p className="story-eyebrow">AFRIFOOD BASKET'S TOUCH</p>
+          <p className="story-eyebrow">AFRIFOOD BASKET · GERMANY</p>
           <div className="divider divider-center" />
           <h1 className="story-title serif">
             From Our Stall<br />
-            <em>to Your Table.</em>
+            <em>to Your Table in Germany.</em>
           </h1>
           <p className="story-intro">
-            A real Nigerian food shop run by AfriFood Basket, extending a hand to busy Lagos professionals, household cooks, and diaspora kitchens.
+            A real Nigerian food shop run by AfriFood Basket, extending a hand to the African diaspora community across Germany — Berlin, Hamburg, Munich, Frankfurt and beyond.
           </p>
         </div>
 
@@ -36,8 +36,8 @@ export default function StoryPage() {
           <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=1600&q=85" alt="Agricultural fields" />
           <div className="story-banner-overlay">
             <blockquote className="serif">
-              "My customers know their soup ingredients. They want real stockfish, rich palm oil, and high-draw ogbono. We pack every box in our shop as if we were cooking it ourselves."
-              <cite style={{ display: 'block', fontSize: 14, marginTop: 12, color: 'var(--gold-light)', fontStyle: 'normal', fontWeight: 700 }}>— STELLA, FOUNDER</cite>
+              "My customers in Germany want real stockfish, rich palm oil, and high-draw ogbono — exactly the same quality they remember from back home. We pack every box as if we were cooking it ourselves."
+              <cite style={{ display: 'block', fontSize: 14, marginTop: 12, color: 'var(--gold-light)', fontStyle: 'normal', fontWeight: 700 }}>— STELLA, FOUNDER · AFRIFOOD BASKET GERMANY</cite>
             </blockquote>
           </div>
         </div>

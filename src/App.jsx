@@ -19,12 +19,15 @@ import CorporateQuoteModal from './components/CorporateQuoteModal';
 import Footer from './components/Footer';
 import PrivacyPage from './components/PrivacyPage';
 import TermsPage from './components/TermsPage';
+import SEOHead from './components/SEOHead';
 
 function MainContent() {
   const { activeView, toastMessage, selectedProduct } = useShop();
 
   return (
     <div className="app">
+      {/* Dynamic SEO: updates <title>, <meta>, JSON-LD per view */}
+      <SEOHead activeView={activeView} selectedProduct={selectedProduct} />
       <AnnouncementBar />
       <Navbar />
 

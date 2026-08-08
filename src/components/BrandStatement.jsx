@@ -4,7 +4,7 @@ const PILLARS = [
   {
     number: '01',
     title: 'Farm Sourcing',
-    body: 'Every crop is cultivated by direct agricultural partner cooperatives across Ogun, Ekiti, Kano, and Benue.',
+    body: 'Every crop is cultivated by direct agricultural partner cooperatives across Ogun, Ekiti, Kano, and Benue — shipped directly to Germany.',
     image: '/nigerian_farm_sourcing.png',
   },
   {
@@ -16,28 +16,30 @@ const PILLARS = [
   {
     number: '03',
     title: 'Quality Assured',
-    body: 'Products are clean-picked, batch-tested, and transparently labeled with origin, shelf life, and allergen details.',
+    body: 'Products are clean-picked, batch-tested, vacuum-sealed, and transparently labeled with origin, shelf life, and allergen details — EU compliant.',
     image: '/food_quality_assurance.png',
   },
   {
     number: '04',
-    title: 'Scheduled Windows',
-    body: 'Zone-validated delivery dates and 3-hour time slots across Lagos, Abuja, Port Harcourt, and Diaspora Express.',
+    title: 'DHL Germany-Wide',
+    body: 'Fast, reliable DHL Express delivery to every city in Germany — Berlin, Hamburg, Munich, Frankfurt, Cologne, Stuttgart, Düsseldorf and beyond.',
     image: '/scheduled_grocery_delivery.png',
   },
 ];
 
 const MARQUEE_ITEMS = [
   'NIGERIAN FARM COOPERATIVES',
-  'DIRECT TO TABLE',
-  'SAME DAY LAGOS',
+  'GERMANY-WIDE DELIVERY',
+  'DHL EXPRESS SHIPPING',
   'HERITAGE GRAINS',
-  'COLD-CHAIN QUALITY',
-  'UK DIASPORA EXPRESS',
+  'VACUUM-SEALED FRESHNESS',
+  'BERLIN · HAMBURG · MUNICH',
   'ARTISAN SPICES',
   'OFADA RICE',
   'POUNDED YAM FLOUR',
   'HALAL CERTIFIED',
+  'FRANKFURT · COLOGNE',
+  'EU FOOD COMPLIANT',
 ];
 
 export default function BrandStatement() {
@@ -63,10 +65,10 @@ export default function BrandStatement() {
           <div className="divider divider-center" />
           <h2 className="brand-title serif">
             Uncompromised Food Culture,<br />
-            <em>Curated for Modern Kitchens.</em>
+            <em>Curated for German Kitchens.</em>
           </h2>
           <p className="brand-intro">
-            AfriFood Basket bridges authentic Nigerian farming cooperatives with discerning households. We make food ordering feel unhurried, trustworthy, and beautifully presented.
+            AfriFood Basket bridges authentic Nigerian farming cooperatives with African diaspora households across Germany. We make food ordering feel unhurried, trustworthy, and beautifully presented.
           </p>
         </div>
 
@@ -90,8 +92,8 @@ export default function BrandStatement() {
         <div className="brand-banner">
           <div className="brand-quote-box text-center">
             <blockquote className="brand-quote serif">
-              "I spent decades building my shop on trust and friendship. This website isn't about replacing my physical counter — it's about extending my hand to wherever you are, packing every bag of garri and bottle of palm oil with the very same care."
-              <cite style={{ display: 'block', fontSize: 13, color: 'var(--gold)', fontStyle: 'normal', fontWeight: 700, marginTop: 12 }}>— STELLA, FOUNDER</cite>
+              "I spent decades building my shop on trust and friendship. AfriFood Basket is simply an extension of my hand across distance — every bag of garri, every bottle of palm oil packed with the very same care, now delivered to your door anywhere in Germany."
+              <cite style={{ display: 'block', fontSize: 13, color: 'var(--gold)', fontStyle: 'normal', fontWeight: 700, marginTop: 12 }}>— STELLA, FOUNDER · AFRIFOOD BASKET</cite>
             </blockquote>
           </div>
         </div>

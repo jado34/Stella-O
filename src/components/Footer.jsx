@@ -31,12 +31,12 @@ export default function Footer() {
         <div className="container">
           <div className="newsletter-inner">
             <div>
-              <h3 className="serif" style={{ fontSize: 24, color: 'var(--charcoal-text)', marginBottom: 4 }}>Subscribe to Farm Harvest Notes</h3>
-              <p style={{ fontSize: 13, color: 'var(--text-muted)' }}>Fresh produce arrivals, seasonal culinary notes, and curated hamper releases.</p>
+              <h3 className="serif" style={{ fontSize: 24, color: 'var(--charcoal-text)', marginBottom: 4 }}>Subscribe to Our Harvest Notes</h3>
+              <p style={{ fontSize: 13, color: 'var(--text-muted)' }}>Fresh stock arrivals, new products, seasonal specials and exclusive offers for Germany.</p>
             </div>
             {subscribed ? (
               <div className="subscribed-badge">
-                ✓ You are subscribed to AfriFood Basket harvest updates.
+                ✓ You are subscribed to AfriFood Basket updates.
               </div>
             ) : (
               <form className="newsletter-form" onSubmit={handleSubscribe}>
@@ -67,10 +67,10 @@ export default function Footer() {
               <span className="nav-logo-sub" style={{ fontSize: 8, letterSpacing: '0.35em', color: 'var(--gold)', fontWeight: 700 }}>BASKET</span>
             </div>
             <p className="footer-brand-desc">
-              Extending authentic food supply chains across distance. Pure local sourcing, hand-selected stock, and trusted diaspora shipping.
+              Authentic Nigerian & West African food delivered across Germany. Pure farm sourcing, quality-assured stock, and DHL Express shipping to every German city.
             </p>
             <p className="footer-brand-motto serif" style={{ color: 'var(--gold)', fontStyle: 'italic', fontSize: 15, marginTop: 12 }}>
-              "Authentic Afro food, anywhere in the world."
+              "Authentic Afro food, anywhere in Germany."
             </p>
 
             {/* Social SVGs */}
@@ -118,15 +118,15 @@ export default function Footer() {
             <div className="footer-contact-items">
               <div className="footer-contact-item">
                 <MapPin size={13} style={{ color: 'var(--gold)', flexShrink: 0, marginTop: 2 }} />
-                <span>Admiralty Way, Lekki Phase 1, Victoria Island, Lagos</span>
+                <span>Kurfürstendamm 50, 10709 Berlin, Germany</span>
               </div>
               <div className="footer-contact-item">
                 <Phone size={13} style={{ color: 'var(--gold)', flexShrink: 0, marginTop: 2 }} />
-                <span>+234 800 SHOPLY-NG</span>
+                <span>+49 30 1234 5678</span>
               </div>
               <div className="footer-contact-item">
                 <Mail size={13} style={{ color: 'var(--gold)', flexShrink: 0, marginTop: 2 }} />
-                <span>concierge@shoply.ng</span>
+                <span>hello@afrifoodbasket.de</span>
               </div>
             </div>
 
@@ -150,7 +150,7 @@ export default function Footer() {
             © {new Date().getFullYear()} AfriFood Basket. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
-            {['PayPal', 'Bank Transfer'].map(p => (
+            {['PayPal', 'SEPA', 'Visa', 'Mastercard'].map(p => (
               <span key={p} style={{ fontSize: 9, padding: '3px 8px', border: '1px solid rgba(245,240,230,0.12)', borderRadius: 3, color: 'rgba(245,240,230,0.35)', letterSpacing: '0.08em' }}>
                 {p}
               </span>
