@@ -160,7 +160,7 @@ export default function OrderConfirmation() {
         </div>
 
         <p className="oc-note">
-          Instant updates sent via SMS & WhatsApp. Need immediate help? Contact Stella's dispatch desk at <strong style={{ color: 'var(--gold)' }}>{WHATSAPP_BUSINESS_NUMBER}</strong>
+          Instant updates sent via SMS & WhatsApp. Need immediate help? Contact AFRIFOOD Basket dispatch desk at <strong style={{ color: 'var(--gold)' }}>{WHATSAPP_BUSINESS_NUMBER}</strong>
         </p>
 
         {/* Action Buttons */}

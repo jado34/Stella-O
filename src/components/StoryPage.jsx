@@ -37,7 +37,7 @@ export default function StoryPage() {
           <div className="story-banner-overlay">
             <blockquote className="serif">
               "My customers in Germany want real stockfish, rich palm oil, and high-draw ogbono — exactly the same quality they remember from back home. We pack every box as if we were cooking it ourselves."
-              <cite style={{ display: 'block', fontSize: 14, marginTop: 12, color: 'var(--gold-light)', fontStyle: 'normal', fontWeight: 700 }}>— STELLA, FOUNDER · AFRIFOOD BASKET GERMANY</cite>
+              <cite style={{ display: 'block', fontSize: 14, marginTop: 12, color: 'var(--gold-light)', fontStyle: 'normal', fontWeight: 700 }}>— STELLA, FOUNDER · AFRIFOOD BASKET</cite>
             </blockquote>
           </div>
         </div>
