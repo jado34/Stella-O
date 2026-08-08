@@ -31,8 +31,8 @@ export default function Footer() {
         <div className="container">
           <div className="newsletter-inner">
             <div>
-              <h3 className="serif" style={{ fontSize: 24, color: 'var(--charcoal-text)', marginBottom: 4 }}>Subscribe to Our Harvest Notes</h3>
-              <p style={{ fontSize: 13, color: 'var(--text-muted)' }}>Fresh stock arrivals, new products, seasonal specials and exclusive offers for Germany.</p>
+              <h3 className="serif" style={{ fontSize: 24, color: '#F5F0E6', marginBottom: 4 }}>Subscribe to Our Harvest Notes</h3>
+              <p style={{ fontSize: 13, color: 'rgba(245, 240, 230, 0.7)' }}>Fresh stock arrivals, new products, seasonal specials and exclusive offers for Germany.</p>
             </div>
             {subscribed ? (
               <div className="subscribed-badge">
